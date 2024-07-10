@@ -1,0 +1,4 @@
+﻿ Đã hoàn thành07/10/2024 10:36:53
+ Đã hoàn thành07/10/2024 10:40:45
+ Đã hoàn thành07/10/2024 10:44:09
+IN_NHAP_CTY SEI_00000369.xlsxLỗi The automation failed to find the UI element operation due to a popup blocking the process.- 07/10/2024 10:45:01

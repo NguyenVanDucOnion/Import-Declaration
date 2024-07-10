@@ -45,6 +45,10 @@
       <x:String>UiPath.Excel.Model</x:String>
       <x:String>System.Security</x:String>
       <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Triggers</x:String>
+      <x:String>UiPath.Platform.Triggers</x:String>
+      <x:String>UiPath.Platform.Triggers.Scope</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Triggers</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -141,7 +145,7 @@
           <av:Size x:Key="ShapeSize">110.4,70.4</av:Size>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Sequence DisplayName="Main" sap:VirtualizedContainerService.HintSize="1057.6,14347.2" sap2010:WorkflowViewState.IdRef="Sequence_3">
+      <Sequence DisplayName="Main" sap:VirtualizedContainerService.HintSize="1500.8,4168" sap2010:WorkflowViewState.IdRef="Sequence_3">
         <Sequence.Variables>
           <Variable x:TypeArguments="s:String[]" Name="FilePath" />
         </Sequence.Variables>
@@ -150,73 +154,74 @@
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:KillProcess AppliesTo="{x:Null}" ContinueOnError="{x:Null}" Process="{x:Null}" DisplayName="Kill Process" sap:VirtualizedContainerService.HintSize="995.2,166.4" sap2010:WorkflowViewState.IdRef="KillProcess_2" ProcessName="EXCEL" />
-        <Assign sap:VirtualizedContainerService.HintSize="995.2,113.6" sap2010:WorkflowViewState.IdRef="Assign_3">
+        <ui:KillProcess AppliesTo="{x:Null}" ContinueOnError="{x:Null}" Process="{x:Null}" DisplayName="Kill Process" sap:VirtualizedContainerService.HintSize="1438.4,166.4" sap2010:WorkflowViewState.IdRef="KillProcess_2" ProcessName="EXCEL" />
+        <Assign sap:VirtualizedContainerService.HintSize="1438.4,113.6" sap2010:WorkflowViewState.IdRef="Assign_3">
           <Assign.To>
             <OutArgument x:TypeArguments="s:String[]">[FilePath]</OutArgument>
           </Assign.To>
           <Assign.Value>
-            <InArgument x:TypeArguments="s:String[]">[Directory.GetFiles("D:\RPA_HDL\Import Declaration\data")]</InArgument>
+            <InArgument x:TypeArguments="s:String[]">[Directory.GetFiles("D:\RPA_HDL\Import Declaration\input")]</InArgument>
           </Assign.Value>
         </Assign>
-        <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each currentItem" sap:VirtualizedContainerService.HintSize="995.2,13978.4" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[FilePath]">
+        <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each currentItem" sap:VirtualizedContainerService.HintSize="1438.4,3799.2" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[FilePath]">
           <ui:ForEach.Body>
             <ActivityAction x:TypeArguments="x:String">
               <ActivityAction.Argument>
                 <DelegateInArgument x:TypeArguments="x:String" Name="currentItem" />
               </ActivityAction.Argument>
-              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="961.6,13840.8" sap2010:WorkflowViewState.IdRef="Sequence_14">
+              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1404.8,3661.6" sap2010:WorkflowViewState.IdRef="Sequence_14">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ueab:ExcelProcessScopeX DisplayAlerts="{x:Null}" ExistingProcessAction="{x:Null}" FileConflictResolution="{x:Null}" LaunchMethod="{x:Null}" LaunchTimeout="{x:Null}" MacroSettings="{x:Null}" ProcessMode="{x:Null}" ShowExcelWindow="{x:Null}" DisplayName="Excel Process Scope" sap:VirtualizedContainerService.HintSize="899.2,13752" sap2010:WorkflowViewState.IdRef="ExcelProcessScopeX_2">
+                <ueab:ExcelProcessScopeX DisplayAlerts="{x:Null}" ExistingProcessAction="{x:Null}" FileConflictResolution="{x:Null}" LaunchMethod="{x:Null}" LaunchTimeout="{x:Null}" MacroSettings="{x:Null}" ProcessMode="{x:Null}" ShowExcelWindow="{x:Null}" DisplayName="Excel Process Scope" sap:VirtualizedContainerService.HintSize="1342.4,3496" sap2010:WorkflowViewState.IdRef="ExcelProcessScopeX_2">
                   <ueab:ExcelProcessScopeX.Body>
                     <ActivityAction x:TypeArguments="ui:IExcelProcess">
                       <ActivityAction.Argument>
                         <DelegateInArgument x:TypeArguments="ui:IExcelProcess" Name="ExcelProcessScopeTag" />
                       </ActivityAction.Argument>
-                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="865.6,13642.4" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1308.8,3409.6" sap2010:WorkflowViewState.IdRef="Sequence_15">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" CreateNewFile="False" DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="803.2,13553.6" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_1" ReadOnly="True" ResizeWindow="None" TemplatePath="D:\RPA_HDL\Import Declaration\template\IMPORT.xlsx" UseTemplate="True" WorkbookPath="[currentItem]">
+                        <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" CreateNewFile="False" DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="1246.4,3320.8" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_1" ReadOnly="True" ResizeWindow="None" TemplatePath="D:\RPA_HDL\Import Declaration\template\IMPORT.xlsx" UseTemplate="True" WorkbookPath="[currentItem]">
                           <ueab:ExcelApplicationCard.Body>
                             <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
                               <ActivityAction.Argument>
                                 <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="Excel" />
                               </ActivityAction.Argument>
-                              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="769.6,13237.6" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1212.8,3004.8" sap2010:WorkflowViewState.IdRef="Sequence_16">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: ECUS5-VNACCS 2018 (Electronic Customs Service) Version: 6.0.151 Lastupdate: 05/06/2" sap:VirtualizedContainerService.HintSize="707.2,13148.8" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" ScopeGuid="624ee1fd-a25d-4187-880b-ab6982eb7df6" Version="V2">
+                                <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: ECUS5-VNACCS 2018 (Electronic Customs Service) Version: 6.0.151 Lastupdate: 05/06/2" sap:VirtualizedContainerService.HintSize="1150.4,2916" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" ScopeGuid="624ee1fd-a25d-4187-880b-ab6982eb7df6" Version="V2">
                                   <uix:NApplicationCard.Body>
                                     <ActivityAction x:TypeArguments="x:Object">
                                       <ActivityAction.Argument>
                                         <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                                       </ActivityAction.Argument>
-                                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="673.6,12834.4" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1116.8,2601.6" sap2010:WorkflowViewState.IdRef="Sequence_18">
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
-                                        <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="611.2,12744" sap2010:WorkflowViewState.IdRef="TryCatch_3">
+                                        <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1054.4,2511.2" sap2010:WorkflowViewState.IdRef="TryCatch_3">
                                           <TryCatch.Try>
-                                            <Sequence sap:VirtualizedContainerService.HintSize="574.4,12488" sap2010:WorkflowViewState.IdRef="Sequence_116">
+                                            <Sequence sap:VirtualizedContainerService.HintSize="512,13705.6" sap2010:WorkflowViewState.IdRef="Sequence_116">
                                               <sap:WorkflowViewStateService.ViewState>
                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                 </scg:Dictionary>
                                               </sap:WorkflowViewStateService.ViewState>
-                                              <Sequence DisplayName="Select company" sap:VirtualizedContainerService.HintSize="512,56.8" sap2010:WorkflowViewState.IdRef="Sequence_123">
+                                              <Sequence DisplayName="Select company" sap:VirtualizedContainerService.HintSize="449.6,56.8" sap2010:WorkflowViewState.IdRef="Sequence_123">
                                                 <sap:WorkflowViewStateService.ViewState>
                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                     <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -341,7 +346,7 @@
                                                   </sap:WorkflowViewStateService.ViewState>
                                                 </uix:NCheckState>
                                               </Sequence>
-                                              <Sequence DisplayName="Thông tin chung" sap:VirtualizedContainerService.HintSize="512,56.8" sap2010:WorkflowViewState.IdRef="Sequence_120">
+                                              <Sequence DisplayName="Thông tin chung" sap:VirtualizedContainerService.HintSize="449.6,56.8" sap2010:WorkflowViewState.IdRef="Sequence_120">
                                                 <Sequence.Variables>
                                                   <Variable x:TypeArguments="x:String" Name="check_loai_hinh" />
                                                 </Sequence.Variables>
@@ -351,7 +356,7 @@
                                                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                   </scg:Dictionary>
                                                 </sap:WorkflowViewStateService.ViewState>
-                                                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'ToolStripButton1'" sap:VirtualizedContainerService.HintSize="433.6,225.6" sap2010:WorkflowViewState.IdRef="NClick_63" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="624ee1fd-a25d-4187-880b-ab6982eb7df6" Version="V3">
+                                                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'ToolStripButton1'" sap:VirtualizedContainerService.HintSize="587.2,225.6" sap2010:WorkflowViewState.IdRef="NClick_63" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="624ee1fd-a25d-4187-880b-ab6982eb7df6" Version="V3">
                                                   <uix:NClick.Target>
                                                     <uix:TargetAnchorable CVScreenId="0d72bd61-9ae1-41f3-84d2-9205ad92a469" CvElementArea="223, 63, 50, 51" CvTextArea="253, 93, 13, 13" CvType="Icon" DesignTimeRectangle="218, 65, 63, 51" DesignTimeScaleFactor="1.25" ElementType="Button" FullSelectorArgument="&lt;wnd ctrlname='ToolStrip1' /&gt;&lt;ctrl name='ToolStrip1' role='tool bar' /&gt;&lt;ctrl name='ToolStripButton1' role='push button' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='ToolStrip1' /&gt;&lt;ctrl name='ToolStrip1' role='tool bar' /&gt;&lt;ctrl name='ToolStripButton1' role='push button' automationid='' check:fulltext='ToolStripButton1' /&gt;" Guid="a766dc7d-7806-4aa2-b7e0-e726ea3015fc" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEMAAAA3CAYAAABXefekAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAoeSURBVGhD7Zv7V1TXFcf5M/oP5Jd2rayVdnWlXcsmtk2axtioMUtsjbX2oUZtsqyJ8RFjpCoRUcEXyEsFIhGMCvJGngPDY4BheD/mBcwMMzCPe+eBP36798HBES/iDLOaoeWHz7qLe+69597v7L3P3ucc4iRJwipzrIoRwqoYIayKEcKqGCGELYbbI2FyyomGbhNK1WMobh79QajtNKJfb4PT7VF8z0iIc7vdig2LYSEharuM+OeVRnz0TQ3+eKYGf0qcO245VYXNCZX44GT0iD9dPd9HkPhT1diT0oCMh70YNtsV3zMS4uz28B6m6jHjYLoKvzr4ALtS6vBFZguO5bSK466L9dhyugofsCBRYu/lhvk+guy91Ih1X5ZhK4mUXd6n+J6RICzD7/crNipxt3EY678qx+7UOjxsGUVb/zjaByboOIFGrRk1GgOqOqKHSmee7yMI/yBf3mjF+ycqcCCtSfE9IyFOlmXMzs4qNiqRXzOAtZ+X4GRuO/rIZ+3TLthnCDraHC5Y7U5YosgUPz/YxxP4XOq9bmEd28hVld4zEuK8Xm9YYuRW9ePNz0qQXNgF/YRj7vyUCfKwCl5dOaRpC2RDF7zdD+DtuP2Uru/pmibIU8Znn2kdhdxbQe33IDkmn217AWklPXj3WBk+/HeVYnskRCYGWcaFou55MeSRFvhKjsKfEw/ZrIOv/ioCGe8jcO23CNz4UOC/GQ///c/g7SyC5JqG5KFRwO2CrC2G/8YW+NN+B3mokdqeCLwELMbvSYzNCbEmxkAtfLf/gUDKGrKKTvgqTiGQ9i583x8QQgmx6i4hkEPCZKyHPE5BjwSRyaJ8j5IROP0KAhdeh68mCbJJ+1yfSqwoMfwZG8RRmpkSsAC+6iQErr5FwqRCthmE6/gK98KfvRH+u5+SWJvn3GVBn0qsLDEyN8Jbffbpva4ZeNW5JMbb8D04BFnfAd/D4/Dnboe3MQ1eihv+tHfEvcJygvctwooWQ7aMkhuQS1xeC++j8/C25SOQtQmBK7+GryoRvuZMcpWfI5C9SQTc4H2LsbLESF8H3/3P6W+NwKe+iUD+TgSuv0eBsgE+dovUNZi9+DqJslEE2dmUXyKQ/Bp8xUfm3GtB36GsrAB67jXMnnmFPvAXgsClNQjkbScLyBJWErjyGxJnB3xtefNB1ttXSaPOVoF3RPVc36HErhg2I+TBesotikWuwPHA23mXXOFbMvk7c3TR3ySaPDEIyWmHl4ZUL90jU54RDLKSY4KEfUSiVImRZmHfocSsGJLbScmWVXyM5HGJj5Xs4yIZm8dunruGr/VQcWina2dsIteYfz7nHnwNJW7iuuB5BWJXjB+AmBXDQzioZugZtS4LK9U2braOkP4WI2bFcLk90AxNYtPJymVRrTEJQRb2qUTsWoZHwrhtRpT0y2GMnud0vZxlZJX1YuPXFdh6plqxPRKiFjN4+o0FWQ4zLrcQNrS/xeB5k28KNDhH1bNSeySs2AA6Om5Hs24cKkKpPRKiFkCnnW4xH7kceBLnZQMoxynHjFtM9ii1R0LUAmifwYajN1qXhbp/QsxiLezzv0XUAqiZfP5u08iyGCHT57gR2h8vS/A8aH71AJLvdOJwZosg8dsOZDzUicBrtk6LHyT0vkiIWsxgNxk02ZcFWwWvy/DzeD6V12ZS72lxKKMF+y834pMrTzlwrUkc9xNnSJj7qhERR4LvEwlRE4PjBo8oyyE4kvAvXdmux5FsNf5+oY4+ugkJeW24+qAbuZV9gqxSHc7d0eBAehP+nPQIn1xtQh5Zz6DhxdXui4iaGPwx41YaIpeAF6FCn7cQtojKNj3+la4SSwEnc9tQrBqGdngCoyYLTAY9TGPDMBjN6BubRG2nHhcKO7EtsYaEq0dOeZ8YppWevRRREYNN22CZRl7N4JKUtIzBTcItfG4Qdo0vMtViGeB8kQaagXFYpygZc87ANTUOj/YhZPUteAyddM4Ju2MaY2YbxZR+bCcL+ejsIxTUUmWs8OyliIoYbN6cPV4t1i1JQd2QcKmFz2U4WJ6704Xt9EFfk0V0D4+TJTkww0K4nHCbeuG78zF8t/8KqadUnGNBHNMzGDJayY20+Mu5Wuyj+BJJUI2OGITV4US91rwk7QOLr43wihwvHe5OqUdV+xim6Ffnj+WPZjz6TgQy3kPg+jpImqL58wwL0qIz4cTNVmwg97rXNEzihucuUYsZLkqWWJCleFEekUn1xo6kWooTrTBOTj3zsYxHr0Hg2lsCqeO759onrA7cquyl4q0SR7NbMGwKL5hGTYxocDRHjb+dr6ORogfOGYeIEW4LxRjLqMDTX4PAlbUCWZU1f15g1cPpsKK6fRR7UuupCq4Q0wJK/SxGTInB/s5bDe41DgshRLBsTIfM6yyEt/Q4ZpNeFXDsCJ4XqDJEUG3WGXEosxk/2/89OgYmFPtZjJgSg/d7fJzagBJKoNzjg5BLjollxwBPKDPJP8XjEz8SzJ79CQKX34Q/4w/w5W6Dr2AXpN4KqHtNOJzVglf3FIkVe6V+FiOmxNh7qUGIUVQ/CLfNRHGhEHJ1ErzlCQJerpw9+2OBL38HvJWJkGtTIJFVSC034TZ0o0lrfLJ/pBidQy+/kM3ElBgnbrWKmJFe0oNph13EAff4ANzmPoGkKyNreEMgN6ZRWz/cEyTcJFkSxQ0XxYxy9Qh2krvxVoXesRUcM7IrekXSdJTS8BGT7bnRYqnRxGJzIKdMh/XHy5FY0IGxMGuVmBJDS9F/3+UmsYeLXWXhxy4lRh2l5geuqUiMCrT2T4j5EaV+FiOmxLDRy/NELwfSPZR4NVMSxal48GM5JvhuxMOftQFS591nhBg1W6l6bSchq3GcEi/e9fOitF+JiMTg4MTbmEbN0dtpx3CNwyNAElWj8aercPC6CvebhqgStYgM0201QGrNg9ScAzdloywCi9XcY8T5Qo2IE59SaV/baZifCgiHsMUorB/CO0dKRaCroOqye9hCyU104IqVM9TGHhMS8tvFVkrewHatWIsyCoytOupP24vubh3ae0ZExVpQO4CvbqpF0GQhuEizUaar9O5LEbYYdV1G7KMhkKvKw1lqnP1Og2QqoaNB9whZwJN5Tc3gJM7c7hCJGO/95GE3gYq3ZLIa5hSJxWU+B1zeAsmuUdE2hokIy3cmbDG4s8p2g8gH3j5cKlzmjShR1DAEk2Va9ON0uakStqOeSvqLd7uwm1LsjZRiB6/l7Zc7z1Mdk9cm3qffMLfzcOH7hkPYYvAij5lemPdi8vwjT7c9iBJDxikxfcj98LQAC8JlvY7yBXYddsvgtWWtY6jrNoqVPJ7M4ftedmZ9MeIeP34clhgMR2n2bS6R2VKiBX/QwkUkDoR8nuMAz5IFr2WRuArmNd5IgqUSQoxwdgj/LyPchHcJKzX+v7H6/yYhxOl0OqwyR5xer8cqjB7/AY/vuMwX+0chAAAAAElFTkSuQmCC" InformativeScreenshot="6db74a22520fcdb98099fbe6130b7af4.png" ScopeSelectorArgument="&lt;wnd app='ecus5vnaccs.exe' ctrlname='frmMain' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive" />
                                                   </uix:NClick.Target>
@@ -366,7 +371,7 @@
                                                     </uix:VerifyExecutionOptions>
                                                   </uix:NClick.VerifyOptions>
                                                 </uix:NClick>
-                                                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Số tờ khai'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="433.6,286.4" sap2010:WorkflowViewState.IdRef="NTypeInto_205" ScopeIdentifier="624ee1fd-a25d-4187-880b-ab6982eb7df6" Text="[Excel.Sheet(&quot;Input&quot;).Cell(&quot;V9&quot;)]" Version="V3">
+                                                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Số tờ khai'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="587.2,286.4" sap2010:WorkflowViewState.IdRef="NTypeInto_205" ScopeIdentifier="624ee1fd-a25d-4187-880b-ab6982eb7df6" Text="[Excel.Sheet(&quot;Input&quot;).Cell(&quot;V9&quot;)]" Version="V3">
                                                   <uix:NTypeInto.Target>
                                                     <uix:TargetAnchorable CVScreenId="1f9fbeb1-0a70-4f74-bc83-e242cc77060e" CvElementArea="1003, 214, 98, 21" CvType="InputBox" DesignTimeRectangle="1004, 215, 95, 18" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;wnd ctrlname='TabTK' /&gt;&lt;wnd ctrlname='TabTTTK' /&gt;&lt;wnd ctrlname='FlowLayoutPanel1' /&gt;&lt;wnd ctrlname='Panel1' /&gt;&lt;wnd ctrlname='txtSOTK_TN_TX' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='TabTK' /&gt;&lt;wnd ctrlname='TabTTTK' /&gt;&lt;wnd ctrlname='FlowLayoutPanel1' /&gt;&lt;wnd ctrlname='Panel1' /&gt;&lt;wnd ctrlname='txtSOTK_TN_TX' /&gt;" Guid="02513510-082b-47e7-81c2-cdd3edf23fd5" InformativeScreenshot="2d36ac13e52359e1f23f25dde802a2dd.png" IsResponsive="True" ScopeSelectorArgument="&lt;wnd app='ecus5vnaccs.exe' ctrlname='frmMain' /&gt;&lt;wnd ctrlname='frmVNACCS_IDA' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive">
                                                       <uix:TargetAnchorable.Anchors>
@@ -387,7 +392,7 @@
                                                     </uix:VerifyExecutionTypeIntoOptions>
                                                   </uix:NTypeInto.VerifyOptions>
                                                 </uix:NTypeInto>
-                                                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Mã loại hình'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="433.6,286.4" sap2010:WorkflowViewState.IdRef="NTypeInto_206" ScopeIdentifier="624ee1fd-a25d-4187-880b-ab6982eb7df6" Text="[Excel.Sheet(&quot;Input&quot;).Cell(&quot;Q9&quot;) + &quot;[k(Tab)]&quot;]" Version="V3">
+                                                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Mã loại hình'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="587.2,286.4" sap2010:WorkflowViewState.IdRef="NTypeInto_206" ScopeIdentifier="624ee1fd-a25d-4187-880b-ab6982eb7df6" Text="[Excel.Sheet(&quot;Input&quot;).Cell(&quot;Q9&quot;) + &quot;[k(Tab)]&quot;]" Version="V3">
                                                   <uix:NTypeInto.Target>
                                                     <uix:TargetAnchorable CVScreenId="bf05c794-fb37-42d6-8396-514e3ab28683" CvElementArea="585, 235, 61, 22" CvType="InputBox" DesignTimeRectangle="586, 236, 59, 20" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;wnd ctrlname='TabTK' /&gt;&lt;wnd ctrlname='TabTTTK' /&gt;&lt;wnd ctrlname='FlowLayoutPanel1' /&gt;&lt;wnd ctrlname='Panel1' /&gt;&lt;wnd ctrlname='txtMA_LH' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='TabTK' /&gt;&lt;wnd ctrlname='TabTTTK' /&gt;&lt;wnd ctrlname='FlowLayoutPanel1' /&gt;&lt;wnd ctrlname='Panel1' /&gt;&lt;wnd ctrlname='txtMA_LH' /&gt;" Guid="a85c99f9-af30-4e1c-8bf5-daf963238e5e" InformativeScreenshot="faf260fe0823807895545c1c91e8d078.png" IsResponsive="True" ScopeSelectorArgument="&lt;wnd app='ecus5vnaccs.exe' ctrlname='frmMain' /&gt;&lt;wnd ctrlname='frmVNACCS_IDA' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive">
                                                       <uix:TargetAnchorable.Anchors>
@@ -408,7 +413,7 @@
                                                     </uix:VerifyExecutionTypeIntoOptions>
                                                   </uix:NTypeInto.VerifyOptions>
                                                 </uix:NTypeInto>
-                                                <Assign sap:VirtualizedContainerService.HintSize="433.6,114.4" sap2010:WorkflowViewState.IdRef="Assign_8">
+                                                <Assign sap:VirtualizedContainerService.HintSize="587.2,114.4" sap2010:WorkflowViewState.IdRef="Assign_8">
                                                   <Assign.To>
                                                     <OutArgument x:TypeArguments="x:String">[check_loai_hinh]</OutArgument>
                                                   </Assign.To>
@@ -416,7 +421,7 @@
                                                     <InArgument x:TypeArguments="x:String">[Excel.Sheet("Input").Cell("P9")]</InArgument>
                                                   </Assign.Value>
                                                 </Assign>
-                                                <uix:NCheckState DisplayName="Check App State 'Nhóm loại hình'" sap:VirtualizedContainerService.HintSize="433.6,56.8" sap2010:WorkflowViewState.IdRef="NCheckState_10" ScopeIdentifier="624ee1fd-a25d-4187-880b-ab6982eb7df6" Version="V3">
+                                                <uix:NCheckState DisplayName="Check App State 'Nhóm loại hình'" sap:VirtualizedContainerService.HintSize="587.2,56.8" sap2010:WorkflowViewState.IdRef="NCheckState_10" ScopeIdentifier="624ee1fd-a25d-4187-880b-ab6982eb7df6" Version="V3">
                                                   <uix:NCheckState.IfExists>
                                                     <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="512,898" sap2010:WorkflowViewState.IdRef="Sequence_105">
                                                       <sap:WorkflowViewStateService.ViewState>
@@ -593,7 +598,7 @@
                                                     </scg:Dictionary>
                                                   </sap:WorkflowViewStateService.ViewState>
                                                 </uix:NCheckState>
-                                                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Cơ quan Hải quan'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="433.6,286.4" sap2010:WorkflowViewState.IdRef="NTypeInto_207" ScopeIdentifier="624ee1fd-a25d-4187-880b-ab6982eb7df6" Text="[Excel.Sheet(&quot;Input&quot;).Cell(&quot;B9&quot;)]" Version="V3">
+                                                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Cơ quan Hải quan'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="587.2,286.4" sap2010:WorkflowViewState.IdRef="NTypeInto_207" ScopeIdentifier="624ee1fd-a25d-4187-880b-ab6982eb7df6" Text="[Excel.Sheet(&quot;Input&quot;).Cell(&quot;B9&quot;)]" Version="V3">
                                                   <uix:NTypeInto.Target>
                                                     <uix:TargetAnchorable CVScreenId="ff2865b2-3ab8-4bdc-9e7a-d52d22fc3aa4" CvElementArea="585, 257, 61, 22" CvType="InputBox" DesignTimeRectangle="586, 258, 59, 20" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;wnd ctrlname='TabTK' /&gt;&lt;wnd ctrlname='TabTTTK' /&gt;&lt;wnd ctrlname='FlowLayoutPanel1' /&gt;&lt;wnd ctrlname='Panel1' /&gt;&lt;wnd ctrlname='txtMA_HQ' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='TabTK' /&gt;&lt;wnd ctrlname='TabTTTK' /&gt;&lt;wnd ctrlname='FlowLayoutPanel1' /&gt;&lt;wnd ctrlname='Panel1' /&gt;&lt;wnd ctrlname='txtMA_HQ' /&gt;" Guid="47f3edca-95e4-4d66-9a7b-9a6e2b7cf8f5" InformativeScreenshot="0e02f5dff489ca57905ea80dd5b4a43c.png" IsResponsive="True" ScopeSelectorArgument="&lt;wnd app='ecus5vnaccs.exe' ctrlname='frmMain' /&gt;&lt;wnd ctrlname='frmVNACCS_IDA' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive">
                                                       <uix:TargetAnchorable.Anchors>
@@ -614,7 +619,7 @@
                                                     </uix:VerifyExecutionTypeIntoOptions>
                                                   </uix:NTypeInto.VerifyOptions>
                                                 </uix:NTypeInto>
-                                                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Phân loại tổ chức'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="433.6,286.4" sap2010:WorkflowViewState.IdRef="NTypeInto_208" ScopeIdentifier="624ee1fd-a25d-4187-880b-ab6982eb7df6" Text="[Excel.Sheet(&quot;Input&quot;).Cell(&quot;T9&quot;)]" Version="V3">
+                                                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Phân loại tổ chức'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="587.2,286.4" sap2010:WorkflowViewState.IdRef="NTypeInto_208" ScopeIdentifier="624ee1fd-a25d-4187-880b-ab6982eb7df6" Text="[Excel.Sheet(&quot;Input&quot;).Cell(&quot;T9&quot;)]" Version="V3">
                                                   <uix:NTypeInto.Target>
                                                     <uix:TargetAnchorable CVScreenId="c0188019-5983-4c21-9743-b2b4a5400d44" CvElementArea="1023, 257, 77, 23" CvType="InputBox" DesignTimeRectangle="1027, 260, 52, 16" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;wnd ctrlname='TabTK' /&gt;&lt;wnd ctrlname='TabTTTK' /&gt;&lt;wnd ctrlname='FlowLayoutPanel1' /&gt;&lt;wnd ctrlname='Panel1' /&gt;&lt;wnd ctrlname='cboCANHAN_TOCHUC' /&gt;&lt;wnd cls='WindowsForms10.EDIT.*' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='TabTK' /&gt;&lt;wnd ctrlname='TabTTTK' /&gt;&lt;wnd ctrlname='FlowLayoutPanel1' /&gt;&lt;wnd ctrlname='Panel1' /&gt;&lt;wnd ctrlname='cboCANHAN_TOCHUC' /&gt;&lt;wnd cls='WindowsForms10.EDIT.*' /&gt;" Guid="571b8a65-c2ba-4067-81ac-3faa6ef6b90c" InformativeScreenshot="0da8d279eab0077bf6c410c7490c8c05.png" IsResponsive="True" ScopeSelectorArgument="&lt;wnd app='ecus5vnaccs.exe' ctrlname='frmMain' /&gt;&lt;wnd ctrlname='frmVNACCS_IDA' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive">
                                                       <uix:TargetAnchorable.Anchors>
@@ -635,7 +640,7 @@
                                                     </uix:VerifyExecutionTypeIntoOptions>
                                                   </uix:NTypeInto.VerifyOptions>
                                                 </uix:NTypeInto>
-                                                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Mã bộ phận xử lý tờ khai'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="433.6,286.4" sap2010:WorkflowViewState.IdRef="NTypeInto_209" ScopeIdentifier="624ee1fd-a25d-4187-880b-ab6982eb7df6" Text="[Excel.Sheet(&quot;Input&quot;).Cell(&quot;C9&quot;)]" Version="V3">
+                                                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Mã bộ phận xử lý tờ khai'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="587.2,286.4" sap2010:WorkflowViewState.IdRef="NTypeInto_209" ScopeIdentifier="624ee1fd-a25d-4187-880b-ab6982eb7df6" Text="[Excel.Sheet(&quot;Input&quot;).Cell(&quot;C9&quot;)]" Version="V3">
                                                   <uix:NTypeInto.Target>
                                                     <uix:TargetAnchorable CVScreenId="c0188019-5983-4c21-9743-b2b4a5400d44" CvElementArea="1024, 280, 76, 22" CvType="InputBox" DesignTimeRectangle="1027, 283, 52, 16" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;wnd ctrlname='TabTK' /&gt;&lt;wnd ctrlname='TabTTTK' /&gt;&lt;wnd ctrlname='FlowLayoutPanel1' /&gt;&lt;wnd ctrlname='Panel1' /&gt;&lt;wnd ctrlname='cboNHOM_HO_SO' /&gt;&lt;wnd cls='WindowsForms10.EDIT.*' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='TabTK' /&gt;&lt;wnd ctrlname='TabTTTK' /&gt;&lt;wnd ctrlname='FlowLayoutPanel1' /&gt;&lt;wnd ctrlname='Panel1' /&gt;&lt;wnd ctrlname='cboNHOM_HO_SO' /&gt;&lt;wnd cls='WindowsForms10.EDIT.*' /&gt;" Guid="99cf9c3a-62c7-4951-b607-1ff5f815afc1" InformativeScreenshot="aaf54810201da113454513188915939d.png" IsResponsive="True" ScopeSelectorArgument="&lt;wnd app='ecus5vnaccs.exe' ctrlname='frmMain' /&gt;&lt;wnd ctrlname='frmVNACCS_IDA' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive">
                                                       <uix:TargetAnchorable.Anchors>
@@ -656,7 +661,7 @@
                                                     </uix:VerifyExecutionTypeIntoOptions>
                                                   </uix:NTypeInto.VerifyOptions>
                                                 </uix:NTypeInto>
-                                                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Mã hiệu phương thức'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="433.6,250.4" sap2010:WorkflowViewState.IdRef="NTypeInto_210" ScopeIdentifier="624ee1fd-a25d-4187-880b-ab6982eb7df6" Text="[Excel.Sheet(&quot;Input&quot;).Cell(&quot;U9&quot;)]" Version="V3">
+                                                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Mã hiệu phương thức'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="587.2,250.4" sap2010:WorkflowViewState.IdRef="NTypeInto_210" ScopeIdentifier="624ee1fd-a25d-4187-880b-ab6982eb7df6" Text="[Excel.Sheet(&quot;Input&quot;).Cell(&quot;U9&quot;)]" Version="V3">
                                                   <uix:NTypeInto.Target>
                                                     <uix:TargetAnchorable CVScreenId="c0188019-5983-4c21-9743-b2b4a5400d44" CvElementArea="1023, 302, 77, 22" CvType="InputBox" DesignTimeRectangle="1027, 305, 52, 16" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;wnd ctrlname='TabTK' /&gt;&lt;wnd ctrlname='TabTTTK' /&gt;&lt;wnd ctrlname='FlowLayoutPanel1' /&gt;&lt;wnd ctrlname='Panel1' /&gt;&lt;wnd ctrlname='cboMA_HIEU_PTVC' /&gt;&lt;wnd cls='WindowsForms10.EDIT.*' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='TabTK' /&gt;&lt;wnd ctrlname='TabTTTK' /&gt;&lt;wnd ctrlname='FlowLayoutPanel1' /&gt;&lt;wnd ctrlname='Panel1' /&gt;&lt;wnd ctrlname='cboMA_HIEU_PTVC' /&gt;&lt;wnd cls='WindowsForms10.EDIT.*' /&gt;" Guid="5f9845c1-9acc-4203-af79-c5ec93ee5ce8" InformativeScreenshot="b650ddfc2b54f2cada2bd1114a123022.png" IsResponsive="True" ScopeSelectorArgument="&lt;wnd app='ecus5vnaccs.exe' ctrlname='frmMain' /&gt;&lt;wnd ctrlname='frmVNACCS_IDA' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive">
                                                       <uix:TargetAnchorable.Anchors>
@@ -667,7 +672,7 @@
                                                     </uix:TargetAnchorable>
                                                   </uix:NTypeInto.Target>
                                                 </uix:NTypeInto>
-                                                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Mã bưu chính'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="433.6,286.4" sap2010:WorkflowViewState.IdRef="NTypeInto_211" ScopeIdentifier="624ee1fd-a25d-4187-880b-ab6982eb7df6" Text="[Excel.Sheet(&quot;Input&quot;).Cell(&quot;H9&quot;)]" Version="V3">
+                                                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Mã bưu chính'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="587.2,286.4" sap2010:WorkflowViewState.IdRef="NTypeInto_211" ScopeIdentifier="624ee1fd-a25d-4187-880b-ab6982eb7df6" Text="[Excel.Sheet(&quot;Input&quot;).Cell(&quot;H9&quot;)]" Version="V3">
                                                   <uix:NTypeInto.Target>
                                                     <uix:TargetAnchorable CVScreenId="646adf5b-bd9f-455e-8958-5457eded5629" CvElementArea="634, 430, 115, 22" CvType="InputBox" DesignTimeRectangle="635, 431, 113, 20" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;wnd ctrlname='TabTK' /&gt;&lt;wnd ctrlname='TabTTTK' /&gt;&lt;wnd ctrlname='FlowLayoutPanel1' /&gt;&lt;wnd ctrlname='Panel1' /&gt;&lt;wnd ctrlname='txtMA_BC_DV' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='TabTK' /&gt;&lt;wnd ctrlname='TabTTTK' /&gt;&lt;wnd ctrlname='FlowLayoutPanel1' /&gt;&lt;wnd ctrlname='Panel1' /&gt;&lt;wnd ctrlname='txtMA_BC_DV' /&gt;" Guid="28d8d603-9bad-4190-9cc1-f28794b0f1ab" InformativeScreenshot="9e99fc97fda72e6ec5226b1e44929839.png" IsResponsive="True" ScopeSelectorArgument="&lt;wnd app='ecus5vnaccs.exe' ctrlname='frmMain' /&gt;&lt;wnd ctrlname='frmVNACCS_IDA' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive">
                                                       <uix:TargetAnchorable.Anchors>
@@ -688,7 +693,7 @@
                                                     </uix:VerifyExecutionTypeIntoOptions>
                                                   </uix:NTypeInto.VerifyOptions>
                                                 </uix:NTypeInto>
-                                                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Mã người uỷ thác nhập khẩu'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="433.6,286.4" sap2010:WorkflowViewState.IdRef="NTypeInto_212" ScopeIdentifier="624ee1fd-a25d-4187-880b-ab6982eb7df6" Text="[Excel.Sheet(&quot;Input&quot;).Cell(&quot;D9&quot;)]" Version="V3">
+                                                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Mã người uỷ thác nhập khẩu'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="587.2,286.4" sap2010:WorkflowViewState.IdRef="NTypeInto_212" ScopeIdentifier="624ee1fd-a25d-4187-880b-ab6982eb7df6" Text="[Excel.Sheet(&quot;Input&quot;).Cell(&quot;D9&quot;)]" Version="V3">
                                                   <uix:NTypeInto.Target>
                                                     <uix:TargetAnchorable CVScreenId="646adf5b-bd9f-455e-8958-5457eded5629" CvElementArea="634, 519, 116, 23" CvType="InputBox" DesignTimeRectangle="635, 520, 113, 20" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;wnd ctrlname='TabTK' /&gt;&lt;wnd ctrlname='TabTTTK' /&gt;&lt;wnd ctrlname='FlowLayoutPanel1' /&gt;&lt;wnd ctrlname='Panel1' /&gt;&lt;wnd ctrlname='txtMA_DVUT' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='TabTK' /&gt;&lt;wnd ctrlname='TabTTTK' /&gt;&lt;wnd ctrlname='FlowLayoutPanel1' /&gt;&lt;wnd ctrlname='Panel1' /&gt;&lt;wnd ctrlname='txtMA_DVUT' /&gt;" Guid="281d3cd4-cfd0-4755-9dc1-d801dc65f93e" InformativeScreenshot="f5cdc2b945c4c480de045b72c4a6186f.png" IsResponsive="True" ScopeSelectorArgument="&lt;wnd app='ecus5vnaccs.exe' ctrlname='frmMain' /&gt;&lt;wnd ctrlname='frmVNACCS_IDA' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive">
                                                       <uix:TargetAnchorable.Anchors>
@@ -709,7 +714,7 @@
                                                     </uix:VerifyExecutionTypeIntoOptions>
                                                   </uix:NTypeInto.VerifyOptions>
                                                 </uix:NTypeInto>
-                                                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Tên người uỷ thác nhập khẩu'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="433.6,286.4" sap2010:WorkflowViewState.IdRef="NTypeInto_213" ScopeIdentifier="624ee1fd-a25d-4187-880b-ab6982eb7df6" Text="[Excel.Sheet(&quot;Input&quot;).Cell(&quot;E9&quot;)]" Version="V3">
+                                                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Tên người uỷ thác nhập khẩu'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="587.2,286.4" sap2010:WorkflowViewState.IdRef="NTypeInto_213" ScopeIdentifier="624ee1fd-a25d-4187-880b-ab6982eb7df6" Text="[Excel.Sheet(&quot;Input&quot;).Cell(&quot;E9&quot;)]" Version="V3">
                                                   <uix:NTypeInto.Target>
                                                     <uix:TargetAnchorable CVScreenId="433e4bc4-9ad5-4bd7-8d3c-59f3f6a49ec8" CvElementArea="634, 541, 466, 32" CvType="InputBox" DesignTimeRectangle="635, 542, 464, 30" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;wnd ctrlname='TabTK' /&gt;&lt;wnd ctrlname='TabTTTK' /&gt;&lt;wnd ctrlname='FlowLayoutPanel1' /&gt;&lt;wnd ctrlname='Panel1' /&gt;&lt;wnd ctrlname='txt_TEN_DVUT' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='TabTK' /&gt;&lt;wnd ctrlname='TabTTTK' /&gt;&lt;wnd ctrlname='FlowLayoutPanel1' /&gt;&lt;wnd ctrlname='Panel1' /&gt;&lt;wnd ctrlname='txt_TEN_DVUT' /&gt;" Guid="36e000c2-3fdc-4311-b81d-2714063cf176" InformativeScreenshot="569a40f0838866087c7fadd4824f0284.png" IsResponsive="True" ScopeSelectorArgument="&lt;wnd app='ecus5vnaccs.exe' ctrlname='frmMain' /&gt;&lt;wnd ctrlname='frmVNACCS_IDA' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive">
                                                       <uix:TargetAnchorable.Anchors>
@@ -730,7 +735,7 @@
                                                     </uix:VerifyExecutionTypeIntoOptions>
                                                   </uix:NTypeInto.VerifyOptions>
                                                 </uix:NTypeInto>
-                                                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Mã người xuất khẩu' " EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="434,288" sap2010:WorkflowViewState.IdRef="NTypeInto_214" ScopeIdentifier="624ee1fd-a25d-4187-880b-ab6982eb7df6" Text="[Excel.Sheet(&quot;Input&quot;).Cell(&quot;F9&quot;)]" Version="V3">
+                                                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Mã người xuất khẩu' " EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="587.2,286.4" sap2010:WorkflowViewState.IdRef="NTypeInto_214" ScopeIdentifier="624ee1fd-a25d-4187-880b-ab6982eb7df6" Text="[Excel.Sheet(&quot;Input&quot;).Cell(&quot;F9&quot;)]" Version="V3">
                                                   <uix:NTypeInto.Target>
                                                     <uix:TargetAnchorable CVScreenId="433e4bc4-9ad5-4bd7-8d3c-59f3f6a49ec8" CvElementArea="633, 589, 116, 23" CvType="InputBox" DesignTimeRectangle="635, 590, 113, 20" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;wnd ctrlname='TabTK' /&gt;&lt;wnd ctrlname='TabTTTK' /&gt;&lt;wnd ctrlname='FlowLayoutPanel1' /&gt;&lt;wnd ctrlname='Panel1' /&gt;&lt;wnd ctrlname='txtDV_DT_L2' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='TabTK' /&gt;&lt;wnd ctrlname='TabTTTK' /&gt;&lt;wnd ctrlname='FlowLayoutPanel1' /&gt;&lt;wnd ctrlname='Panel1' /&gt;&lt;wnd ctrlname='txtDV_DT_L2' /&gt;" Guid="18e5298f-eb06-45b4-a30a-f7ad548e7318" InformativeScreenshot="1ec4a119cf9e38df2425f2fe199a32cf.png" IsResponsive="True" ScopeSelectorArgument="&lt;wnd app='ecus5vnaccs.exe' ctrlname='frmMain' /&gt;&lt;wnd ctrlname='frmVNACCS_IDA' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive">
                                                       <uix:TargetAnchorable.Anchors>
@@ -751,7 +756,7 @@
                                                     </uix:VerifyExecutionTypeIntoOptions>
                                                   </uix:NTypeInto.VerifyOptions>
                                                 </uix:NTypeInto>
-                                                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Tên người xuất khẩu'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="434,288" sap2010:WorkflowViewState.IdRef="NTypeInto_215" ScopeIdentifier="624ee1fd-a25d-4187-880b-ab6982eb7df6" Text="[Excel.Sheet(&quot;Input&quot;).Cell(&quot;G9&quot;)]" Version="V3">
+                                                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Tên người xuất khẩu'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="587.2,286.4" sap2010:WorkflowViewState.IdRef="NTypeInto_215" ScopeIdentifier="624ee1fd-a25d-4187-880b-ab6982eb7df6" Text="[Excel.Sheet(&quot;Input&quot;).Cell(&quot;G9&quot;)]" Version="V3">
                                                   <uix:NTypeInto.Target>
                                                     <uix:TargetAnchorable CVScreenId="c3a245fd-206e-476a-b3d4-d8f1adf80c33" CvElementArea="634, 611, 465, 32" CvType="InputBox" DesignTimeRectangle="635, 612, 464, 30" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;wnd ctrlname='TabTK' /&gt;&lt;wnd ctrlname='TabTTTK' /&gt;&lt;wnd ctrlname='FlowLayoutPanel1' /&gt;&lt;wnd ctrlname='Panel1' /&gt;&lt;wnd ctrlname='txtDV_DT' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='TabTK' /&gt;&lt;wnd ctrlname='TabTTTK' /&gt;&lt;wnd ctrlname='FlowLayoutPanel1' /&gt;&lt;wnd ctrlname='Panel1' /&gt;&lt;wnd ctrlname='txtDV_DT' /&gt;" Guid="af3a0ad0-3374-4652-9e4e-44e7fc423353" InformativeScreenshot="9e8ae52d77e7fc515a5ed84954c28908.png" IsResponsive="True" ScopeSelectorArgument="&lt;wnd app='ecus5vnaccs.exe' ctrlname='frmMain' /&gt;&lt;wnd ctrlname='frmVNACCS_IDA' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive">
                                                       <uix:TargetAnchorable.Anchors>
@@ -772,7 +777,7 @@
                                                     </uix:VerifyExecutionTypeIntoOptions>
                                                   </uix:NTypeInto.VerifyOptions>
                                                 </uix:NTypeInto>
-                                                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Mã bưu chính người xuất khẩu'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="434,251" sap2010:WorkflowViewState.IdRef="NTypeInto_216" ScopeIdentifier="624ee1fd-a25d-4187-880b-ab6982eb7df6" Text="[Excel.Sheet(&quot;Input&quot;).Cell(&quot;H9&quot;)]" Version="V3">
+                                                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Mã bưu chính người xuất khẩu'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="587.2,250.4" sap2010:WorkflowViewState.IdRef="NTypeInto_216" ScopeIdentifier="624ee1fd-a25d-4187-880b-ab6982eb7df6" Text="[Excel.Sheet(&quot;Input&quot;).Cell(&quot;H9&quot;)]" Version="V3">
                                                   <uix:NTypeInto.Target>
                                                     <uix:TargetAnchorable CVScreenId="0b4b3d85-1b9e-4a43-87b5-ae37b755cf52" CvElementArea="634, 403, 116, 23" CvType="InputBox" DesignTimeRectangle="635, 404, 113, 20" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;wnd ctrlname='TabTK' /&gt;&lt;wnd ctrlname='TabTTTK' /&gt;&lt;wnd ctrlname='FlowLayoutPanel1' /&gt;&lt;wnd ctrlname='Panel1' /&gt;&lt;wnd ctrlname='txtMA_BC_DT' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='TabTK' /&gt;&lt;wnd ctrlname='TabTTTK' /&gt;&lt;wnd ctrlname='FlowLayoutPanel1' /&gt;&lt;wnd ctrlname='Panel1' /&gt;&lt;wnd ctrlname='txtMA_BC_DT' /&gt;" Guid="8aeec1cf-8631-47a1-b234-7fa5cfc83f85" InformativeScreenshot="1a412db802ddd7310b3518b7aa92b3a6.png" IsResponsive="True" ScopeSelectorArgument="&lt;wnd app='ecus5vnaccs.exe' ctrlname='frmMain' /&gt;&lt;wnd ctrlname='frmVNACCS_IDA' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive">
                                                       <uix:TargetAnchorable.Anchors>
@@ -783,7 +788,7 @@
                                                     </uix:TargetAnchorable>
                                                   </uix:NTypeInto.Target>
                                                 </uix:NTypeInto>
-                                                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Địa chỉ'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="434,288" sap2010:WorkflowViewState.IdRef="NTypeInto_217" ScopeIdentifier="624ee1fd-a25d-4187-880b-ab6982eb7df6" Text="[Excel.Sheet(&quot;Input&quot;).Cell(&quot;I9&quot;)]" Version="V3">
+                                                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Địa chỉ'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="587.2,286.4" sap2010:WorkflowViewState.IdRef="NTypeInto_217" ScopeIdentifier="624ee1fd-a25d-4187-880b-ab6982eb7df6" Text="[Excel.Sheet(&quot;Input&quot;).Cell(&quot;I9&quot;)]" Version="V3">
                                                   <uix:NTypeInto.Target>
                                                     <uix:TargetAnchorable CVScreenId="ddf02802-0882-4fe9-b7ba-dafb4286621a" CvElementArea="634, 507, 232, 22" CvType="InputBox" DesignTimeRectangle="635, 508, 230, 20" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;wnd ctrlname='TabTK' /&gt;&lt;wnd ctrlname='TabTTTK' /&gt;&lt;wnd ctrlname='FlowLayoutPanel1' /&gt;&lt;wnd ctrlname='Panel1' /&gt;&lt;wnd ctrlname='txtDIA_CHI_DT1' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='TabTK' /&gt;&lt;wnd ctrlname='TabTTTK' /&gt;&lt;wnd ctrlname='FlowLayoutPanel1' /&gt;&lt;wnd ctrlname='Panel1' /&gt;&lt;wnd ctrlname='txtDIA_CHI_DT1' /&gt;" Guid="e0fd580d-bda6-46f9-9c84-3e5b4e9f078e" InformativeScreenshot="b3ceb284cd95163e786eca1c81bbb6e0.png" IsResponsive="True" ScopeSelectorArgument="&lt;wnd app='ecus5vnaccs.exe' ctrlname='frmMain' /&gt;&lt;wnd ctrlname='frmVNACCS_IDA' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive">
                                                       <uix:TargetAnchorable.Anchors>
@@ -804,7 +809,7 @@
                                                     </uix:VerifyExecutionTypeIntoOptions>
                                                   </uix:NTypeInto.VerifyOptions>
                                                 </uix:NTypeInto>
-                                                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Địa chỉ'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="434,288" sap2010:WorkflowViewState.IdRef="NTypeInto_218" ScopeIdentifier="624ee1fd-a25d-4187-880b-ab6982eb7df6" Text="[Excel.Sheet(&quot;Input&quot;).Cell(&quot;J9&quot;)]" Version="V3">
+                                                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Địa chỉ'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="587.2,286.4" sap2010:WorkflowViewState.IdRef="NTypeInto_218" ScopeIdentifier="624ee1fd-a25d-4187-880b-ab6982eb7df6" Text="[Excel.Sheet(&quot;Input&quot;).Cell(&quot;J9&quot;)]" Version="V3">
                                                   <uix:NTypeInto.Target>
                                                     <uix:TargetAnchorable CVScreenId="ddf02802-0882-4fe9-b7ba-dafb4286621a" CvElementArea="867, 507, 233, 22" CvType="InputBox" DesignTimeRectangle="869, 508, 230, 20" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;wnd ctrlname='TabTK' /&gt;&lt;wnd ctrlname='TabTTTK' /&gt;&lt;wnd ctrlname='FlowLayoutPanel1' /&gt;&lt;wnd ctrlname='Panel1' /&gt;&lt;wnd ctrlname='txtDIA_CHI_DT2' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='TabTK' /&gt;&lt;wnd ctrlname='TabTTTK' /&gt;&lt;wnd ctrlname='FlowLayoutPanel1' /&gt;&lt;wnd ctrlname='Panel1' /&gt;&lt;wnd ctrlname='txtDIA_CHI_DT2' /&gt;" Guid="8cc4e95c-61d3-4659-be06-5b0bd4c399f0" InformativeScreenshot="5134750e28db9a50e6cac04a5e7ac6b2.png" IsResponsive="True" ScopeSelectorArgument="&lt;wnd app='ecus5vnaccs.exe' ctrlname='frmMain' /&gt;&lt;wnd ctrlname='frmVNACCS_IDA' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive">
                                                       <uix:TargetAnchorable.Anchors>
@@ -825,7 +830,7 @@
                                                     </uix:VerifyExecutionTypeIntoOptions>
                                                   </uix:NTypeInto.VerifyOptions>
                                                 </uix:NTypeInto>
-                                                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Địa chỉ'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="434,288" sap2010:WorkflowViewState.IdRef="NTypeInto_219" ScopeIdentifier="624ee1fd-a25d-4187-880b-ab6982eb7df6" Text="[Excel.Sheet(&quot;Input&quot;).Cell(&quot;K9&quot;)]" Version="V3">
+                                                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Địa chỉ'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="587.2,286.4" sap2010:WorkflowViewState.IdRef="NTypeInto_219" ScopeIdentifier="624ee1fd-a25d-4187-880b-ab6982eb7df6" Text="[Excel.Sheet(&quot;Input&quot;).Cell(&quot;K9&quot;)]" Version="V3">
                                                   <uix:NTypeInto.Target>
                                                     <uix:TargetAnchorable CVScreenId="ddf02802-0882-4fe9-b7ba-dafb4286621a" CvElementArea="634, 529, 232, 22" CvType="InputBox" DesignTimeRectangle="635, 530, 230, 20" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;wnd ctrlname='TabTK' /&gt;&lt;wnd ctrlname='TabTTTK' /&gt;&lt;wnd ctrlname='FlowLayoutPanel1' /&gt;&lt;wnd ctrlname='Panel1' /&gt;&lt;wnd ctrlname='txtDIA_CHI_DT3' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='TabTK' /&gt;&lt;wnd ctrlname='TabTTTK' /&gt;&lt;wnd ctrlname='FlowLayoutPanel1' /&gt;&lt;wnd ctrlname='Panel1' /&gt;&lt;wnd ctrlname='txtDIA_CHI_DT3' /&gt;" Guid="b056a5af-3735-4706-bf01-83a4e34ba436" InformativeScreenshot="87f9e707e63c73de966a232d9ecc3e41.png" ScopeSelectorArgument="&lt;wnd app='ecus5vnaccs.exe' ctrlname='frmMain' /&gt;&lt;wnd ctrlname='frmVNACCS_IDA' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive">
                                                       <uix:TargetAnchorable.Anchors>
@@ -846,7 +851,7 @@
                                                     </uix:VerifyExecutionTypeIntoOptions>
                                                   </uix:NTypeInto.VerifyOptions>
                                                 </uix:NTypeInto>
-                                                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Địa chỉ'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="434,251" sap2010:WorkflowViewState.IdRef="NTypeInto_220" ScopeIdentifier="624ee1fd-a25d-4187-880b-ab6982eb7df6" Text="[Excel.Sheet(&quot;Input&quot;).Cell(&quot;L9&quot;)]" Version="V3">
+                                                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Địa chỉ'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="587.2,250.4" sap2010:WorkflowViewState.IdRef="NTypeInto_220" ScopeIdentifier="624ee1fd-a25d-4187-880b-ab6982eb7df6" Text="[Excel.Sheet(&quot;Input&quot;).Cell(&quot;L9&quot;)]" Version="V3">
                                                   <uix:NTypeInto.Target>
                                                     <uix:TargetAnchorable CVScreenId="ddf02802-0882-4fe9-b7ba-dafb4286621a" CvElementArea="868, 529, 233, 22" CvType="InputBox" DesignTimeRectangle="869, 530, 230, 20" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;wnd ctrlname='TabTK' /&gt;&lt;wnd ctrlname='TabTTTK' /&gt;&lt;wnd ctrlname='FlowLayoutPanel1' /&gt;&lt;wnd ctrlname='Panel1' /&gt;&lt;wnd ctrlname='txtDIA_CHI_DT4' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='TabTK' /&gt;&lt;wnd ctrlname='TabTTTK' /&gt;&lt;wnd ctrlname='FlowLayoutPanel1' /&gt;&lt;wnd ctrlname='Panel1' /&gt;&lt;wnd ctrlname='txtDIA_CHI_DT4' /&gt;" Guid="193d8bbd-013e-4eec-822d-c971d6462147" InformativeScreenshot="c5aa8f4025ec0fec3be9daa43ba392b1.png" ScopeSelectorArgument="&lt;wnd app='ecus5vnaccs.exe' ctrlname='frmMain' /&gt;&lt;wnd ctrlname='frmVNACCS_IDA' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive">
                                                       <uix:TargetAnchorable.Anchors>
@@ -857,7 +862,7 @@
                                                     </uix:TargetAnchorable>
                                                   </uix:NTypeInto.Target>
                                                 </uix:NTypeInto>
-                                                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Mã nước'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="434,288" sap2010:WorkflowViewState.IdRef="NTypeInto_221" ScopeIdentifier="624ee1fd-a25d-4187-880b-ab6982eb7df6" Text="[Excel.Sheet(&quot;Input&quot;).Cell(&quot;M9&quot;)]" Version="V3">
+                                                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Mã nước'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="587.2,286.4" sap2010:WorkflowViewState.IdRef="NTypeInto_221" ScopeIdentifier="624ee1fd-a25d-4187-880b-ab6982eb7df6" Text="[Excel.Sheet(&quot;Input&quot;).Cell(&quot;M9&quot;)]" Version="V3">
                                                   <uix:NTypeInto.Target>
                                                     <uix:TargetAnchorable CVScreenId="ddf02802-0882-4fe9-b7ba-dafb4286621a" CvElementArea="633, 551, 55, 23" CvType="InputBox" DesignTimeRectangle="635, 552, 52, 20" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;wnd ctrlname='TabTK' /&gt;&lt;wnd ctrlname='TabTTTK' /&gt;&lt;wnd ctrlname='FlowLayoutPanel1' /&gt;&lt;wnd ctrlname='Panel1' /&gt;&lt;wnd ctrlname='txtNUOC_XK' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='TabTK' /&gt;&lt;wnd ctrlname='TabTTTK' /&gt;&lt;wnd ctrlname='FlowLayoutPanel1' /&gt;&lt;wnd ctrlname='Panel1' /&gt;&lt;wnd ctrlname='txtNUOC_XK' /&gt;" Guid="f301ba82-e112-4cfb-9d36-15ef70bff90d" InformativeScreenshot="78554b65feba35d5a07c60b96e56511a.png" IsResponsive="True" ScopeSelectorArgument="&lt;wnd app='ecus5vnaccs.exe' ctrlname='frmMain' /&gt;&lt;wnd ctrlname='frmVNACCS_IDA' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive">
                                                       <uix:TargetAnchorable.Anchors>
@@ -878,7 +883,7 @@
                                                     </uix:VerifyExecutionTypeIntoOptions>
                                                   </uix:NTypeInto.VerifyOptions>
                                                 </uix:NTypeInto>
-                                                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Người ủy thác xuất khẩu'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="434,288" sap2010:WorkflowViewState.IdRef="NTypeInto_222" ScopeIdentifier="624ee1fd-a25d-4187-880b-ab6982eb7df6" Text="[Excel.Sheet(&quot;Input&quot;).Cell(&quot;O9&quot;)]" Version="V3">
+                                                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Người ủy thác xuất khẩu'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="587.2,286.4" sap2010:WorkflowViewState.IdRef="NTypeInto_222" ScopeIdentifier="624ee1fd-a25d-4187-880b-ab6982eb7df6" Text="[Excel.Sheet(&quot;Input&quot;).Cell(&quot;O9&quot;)]" Version="V3">
                                                   <uix:NTypeInto.Target>
                                                     <uix:TargetAnchorable CVScreenId="ddf02802-0882-4fe9-b7ba-dafb4286621a" CvElementArea="633, 573, 468, 22" CvType="InputBox" DesignTimeRectangle="635, 574, 464, 20" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;wnd ctrlname='TabTK' /&gt;&lt;wnd ctrlname='TabTTTK' /&gt;&lt;wnd ctrlname='FlowLayoutPanel1' /&gt;&lt;wnd ctrlname='Panel1' /&gt;&lt;wnd ctrlname='txtTENCH' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='TabTK' /&gt;&lt;wnd ctrlname='TabTTTK' /&gt;&lt;wnd ctrlname='FlowLayoutPanel1' /&gt;&lt;wnd ctrlname='Panel1' /&gt;&lt;wnd ctrlname='txtTENCH' /&gt;" Guid="e2dbb2f5-2a9b-493c-9e04-abe227709d50" InformativeScreenshot="ca840a0d25a21ced36f00f8708544666.png" IsResponsive="True" ScopeSelectorArgument="&lt;wnd app='ecus5vnaccs.exe' ctrlname='frmMain' /&gt;&lt;wnd ctrlname='frmVNACCS_IDA' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive">
                                                       <uix:TargetAnchorable.Anchors>
@@ -899,9 +904,9 @@
                                                     </uix:VerifyExecutionTypeIntoOptions>
                                                   </uix:NTypeInto.VerifyOptions>
                                                 </uix:NTypeInto>
-                                                <ui:IfElseIfV2 Condition="[Excel.Sheet(&quot;Input&quot;).Cell(&quot;T9&quot;) = &quot;1&quot;]" DisplayName="Else If" sap:VirtualizedContainerService.HintSize="434,57" sap2010:WorkflowViewState.IdRef="IfElseIfV2_8">
+                                                <ui:IfElseIfV2 Condition="[Excel.Sheet(&quot;Input&quot;).Cell(&quot;T9&quot;) = &quot;1&quot;]" DisplayName="Else If" sap:VirtualizedContainerService.HintSize="587.2,1906.4" sap2010:WorkflowViewState.IdRef="IfElseIfV2_8">
                                                   <ui:IfElseIfV2.Else>
-                                                    <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,104" sap2010:WorkflowViewState.IdRef="Sequence_109">
+                                                    <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,104.8" sap2010:WorkflowViewState.IdRef="Sequence_109">
                                                       <sap:WorkflowViewStateService.ViewState>
                                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -913,13 +918,13 @@
                                                     <sc:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True">
                                                       <ui:IfElseIfBlock BlockType="ElseIf" Condition="[Excel.Sheet(&quot;Input&quot;).Cell(&quot;T9&quot;) = &quot;5&quot; Or Excel.Sheet(&quot;Input&quot;).Cell(&quot;T9&quot;) = &quot;6&quot;]" DisplayName="If else if block" sap2010:WorkflowViewState.IdRef="IfElseIfBlock_17">
                                                         <ui:IfElseIfBlock.Then>
-                                                          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="416,306" sap2010:WorkflowViewState.IdRef="Sequence_108">
+                                                          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="416,305.6" sap2010:WorkflowViewState.IdRef="Sequence_108">
                                                             <sap:WorkflowViewStateService.ViewState>
                                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                               </scg:Dictionary>
                                                             </sap:WorkflowViewStateService.ViewState>
-                                                            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Khai báo'" sap:VirtualizedContainerService.HintSize="354,218" sap2010:WorkflowViewState.IdRef="NClick_70" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="624ee1fd-a25d-4187-880b-ab6982eb7df6" Version="V3">
+                                                            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Khai báo'" sap:VirtualizedContainerService.HintSize="353.6,216.8" sap2010:WorkflowViewState.IdRef="NClick_70" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="624ee1fd-a25d-4187-880b-ab6982eb7df6" Version="V3">
                                                               <uix:NClick.Target>
                                                                 <uix:TargetAnchorable CVScreenId="e304687d-1462-436b-a051-e0c07ef8e34a" CvElementArea="634, 377, 16, 16" CvTextArea="653, 377, 398, 13" CvTextArgument="Khai bao so dinh danh theo chuan quan ly giam sat Hai quan ty dong tai Cang bien." CvType="CheckBox" DesignTimeRectangle="635, 377, 423, 17" DesignTimeScaleFactor="1" ElementType="CheckBox" FullSelectorArgument="&lt;wnd ctrlname='TabTK' /&gt;&lt;wnd ctrlname='TabTTTK' /&gt;&lt;wnd ctrlname='FlowLayoutPanel1' /&gt;&lt;wnd ctrlname='Panel1' /&gt;&lt;wnd ctrlname='chkCV1593' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='TabTK' /&gt;&lt;wnd ctrlname='TabTTTK' /&gt;&lt;wnd ctrlname='FlowLayoutPanel1' /&gt;&lt;wnd ctrlname='Panel1' /&gt;&lt;wnd ctrlname='chkCV1593' check:fulltext='Khai báo số định danh theo chuẩn quản lý giám sát Hải quan tự động tại Cảng biển.' /&gt;" Guid="efda45cd-91ec-4966-92f4-1715327ac806" InformativeScreenshot="432434048129906a7c25763b0177d8f3.png" ScopeSelectorArgument="&lt;wnd app='ecus5vnaccs.exe' ctrlname='frmMain' /&gt;&lt;wnd ctrlname='frmVNACCS_IDA' /&gt;" SearchSteps="Selector, CV" Version="V4" Visibility="Interactive" />
                                                               </uix:NClick.Target>
@@ -937,22 +942,83 @@
                                                           </Sequence>
                                                         </ui:IfElseIfBlock.Then>
                                                       </ui:IfElseIfBlock>
+                                                      <ui:IfElseIfBlock BlockType="ElseIf" Condition="[Excel.Sheet(&quot;Input&quot;).Cell(&quot;T9&quot;) =&quot;9&quot;]" DisplayName="If else if block" sap2010:WorkflowViewState.IdRef="IfElseIfBlock_18">
+                                                        <ui:IfElseIfBlock.Then>
+                                                          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="512,861.6" sap2010:WorkflowViewState.IdRef="Sequence_124">
+                                                            <sap:WorkflowViewStateService.ViewState>
+                                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                              </scg:Dictionary>
+                                                            </sap:WorkflowViewStateService.ViewState>
+                                                            <If Condition="[Excel.Sheet(&quot;Input&quot;).Cell(&quot;X9&quot;) = &quot;CẢNG BIỂN&quot;]" sap:VirtualizedContainerService.HintSize="449.6,772.8" sap2010:WorkflowViewState.IdRef="If_11">
+                                                              <If.Then>
+                                                                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,305.6" sap2010:WorkflowViewState.IdRef="Sequence_125">
+                                                                  <sap:WorkflowViewStateService.ViewState>
+                                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                    </scg:Dictionary>
+                                                                  </sap:WorkflowViewStateService.ViewState>
+                                                                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Khai báo'" sap:VirtualizedContainerService.HintSize="353.6,216.8" sap2010:WorkflowViewState.IdRef="NClick_81" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="624ee1fd-a25d-4187-880b-ab6982eb7df6" Version="V3">
+                                                                    <uix:NClick.Target>
+                                                                      <uix:TargetAnchorable CVScreenId="c54d1f7b-05d4-47d0-a2b4-633ca3a46d86" CvElementArea="897, 605, 20, 19" CvTextArea="922, 606, 497, 16" CvTextArgument="Khai bao so dinh danh theo chuan quan ly giam sat Hai quan tu dong tai Cang bien." CvType="CheckBox" DesignTimeRectangle="900, 606, 529, 21" DesignTimeScaleFactor="1.25" ElementType="CheckBox" FullSelectorArgument="&lt;wnd ctrlname='TabTK' /&gt;&lt;wnd ctrlname='TabTTTK' /&gt;&lt;wnd ctrlname='FlowLayoutPanel1' /&gt;&lt;wnd ctrlname='Panel1' /&gt;&lt;wnd ctrlname='chkCV1593' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='TabTK' /&gt;&lt;wnd ctrlname='TabTTTK' /&gt;&lt;wnd ctrlname='FlowLayoutPanel1' /&gt;&lt;wnd ctrlname='Panel1' /&gt;&lt;wnd ctrlname='chkCV1593' check:fulltext='Khai báo số định danh theo chuẩn quản lý giám sát Hải quan tự động tại Cảng biển.' /&gt;" Guid="9be3f07f-6819-4144-a74d-eaf6b5a16304" InformativeScreenshot="f04319703d7acf0677c4d6f2882729a8.png" ScopeSelectorArgument="&lt;wnd app='ecus5vnaccs.exe' ctrlname='frmMain' /&gt;&lt;wnd ctrlname='frmVNACCS_IDA' /&gt;" SearchSteps="Selector, CV" Version="V4" Visibility="Interactive" />
+                                                                    </uix:NClick.Target>
+                                                                    <uix:NClick.VerifyOptions>
+                                                                      <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                                                        <uix:VerifyExecutionOptions.Retry>
+                                                                          <InArgument x:TypeArguments="x:Boolean" />
+                                                                        </uix:VerifyExecutionOptions.Retry>
+                                                                        <uix:VerifyExecutionOptions.Timeout>
+                                                                          <InArgument x:TypeArguments="x:Double" />
+                                                                        </uix:VerifyExecutionOptions.Timeout>
+                                                                      </uix:VerifyExecutionOptions>
+                                                                    </uix:NClick.VerifyOptions>
+                                                                  </uix:NClick>
+                                                                </Sequence>
+                                                              </If.Then>
+                                                              <If.Else>
+                                                                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,305.6" sap2010:WorkflowViewState.IdRef="Sequence_126">
+                                                                  <sap:WorkflowViewStateService.ViewState>
+                                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                    </scg:Dictionary>
+                                                                  </sap:WorkflowViewStateService.ViewState>
+                                                                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Khai báo'" sap:VirtualizedContainerService.HintSize="353.6,216.8" sap2010:WorkflowViewState.IdRef="NClick_82" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="624ee1fd-a25d-4187-880b-ab6982eb7df6" Version="V3">
+                                                                    <uix:NClick.Target>
+                                                                      <uix:TargetAnchorable CVScreenId="c54d1f7b-05d4-47d0-a2b4-633ca3a46d86" CvElementArea="897, 631, 20, 20" CvTextArea="922, 633, 540, 17" CvTextArgument="Khai bao so dinh danh theo chuan quan ly giam sat Hai quan tu dong tai Cang hang khong" CvType="CheckBox" DesignTimeRectangle="900, 633, 571, 21" DesignTimeScaleFactor="1.25" ElementType="CheckBox" FullSelectorArgument="&lt;wnd ctrlname='TabTK' /&gt;&lt;wnd ctrlname='TabTTTK' /&gt;&lt;wnd ctrlname='FlowLayoutPanel1' /&gt;&lt;wnd ctrlname='Panel1' /&gt;&lt;wnd ctrlname='chkQD2061' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='TabTK' /&gt;&lt;wnd ctrlname='TabTTTK' /&gt;&lt;wnd ctrlname='FlowLayoutPanel1' /&gt;&lt;wnd ctrlname='Panel1' /&gt;&lt;wnd ctrlname='chkQD2061' check:fulltext='Khai báo số định danh theo chuẩn quản lý giám sát Hải quan tự động tại Cảng hàng không' /&gt;" Guid="4781a2cf-ad22-41d2-a8e5-8cf1cd3117bc" InformativeScreenshot="63fe4c4b9935910821ced5651ad84060.png" ScopeSelectorArgument="&lt;wnd app='ecus5vnaccs.exe' ctrlname='frmMain' /&gt;&lt;wnd ctrlname='frmVNACCS_IDA' /&gt;" SearchSteps="Selector, CV" Version="V4" Visibility="Interactive" />
+                                                                    </uix:NClick.Target>
+                                                                    <uix:NClick.VerifyOptions>
+                                                                      <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                                                        <uix:VerifyExecutionOptions.Retry>
+                                                                          <InArgument x:TypeArguments="x:Boolean" />
+                                                                        </uix:VerifyExecutionOptions.Retry>
+                                                                        <uix:VerifyExecutionOptions.Timeout>
+                                                                          <InArgument x:TypeArguments="x:Double" />
+                                                                        </uix:VerifyExecutionOptions.Timeout>
+                                                                      </uix:VerifyExecutionOptions>
+                                                                    </uix:NClick.VerifyOptions>
+                                                                  </uix:NClick>
+                                                                </Sequence>
+                                                              </If.Else>
+                                                            </If>
+                                                          </Sequence>
+                                                        </ui:IfElseIfBlock.Then>
+                                                      </ui:IfElseIfBlock>
                                                     </sc:BindingList>
                                                   </ui:IfElseIfV2.ElseIfs>
                                                   <sap:WorkflowViewStateService.ViewState>
                                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                     </scg:Dictionary>
                                                   </sap:WorkflowViewStateService.ViewState>
                                                   <ui:IfElseIfV2.Then>
-                                                    <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,306" sap2010:WorkflowViewState.IdRef="Sequence_107">
+                                                    <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,305.6" sap2010:WorkflowViewState.IdRef="Sequence_107">
                                                       <sap:WorkflowViewStateService.ViewState>
                                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                         </scg:Dictionary>
                                                       </sap:WorkflowViewStateService.ViewState>
-                                                      <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Khai báo'" sap:VirtualizedContainerService.HintSize="354,218" sap2010:WorkflowViewState.IdRef="NClick_69" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="624ee1fd-a25d-4187-880b-ab6982eb7df6" Version="V3">
+                                                      <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Khai báo'" sap:VirtualizedContainerService.HintSize="353.6,216.8" sap2010:WorkflowViewState.IdRef="NClick_69" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="624ee1fd-a25d-4187-880b-ab6982eb7df6" Version="V3">
                                                         <uix:NClick.Target>
                                                           <uix:TargetAnchorable CVScreenId="d80b78e3-87ff-4e82-89a9-75072d264bd1" CvElementArea="634, 463, 16, 15" CvTextArea="653, 464, 432, 14" CvTextArgument="Khai bao so dinh danh theo chuan quan ly giam sat Hai quan ty dong tai Cang hang khong" CvType="CheckBox" DesignTimeRectangle="635, 463, 457, 17" DesignTimeScaleFactor="1" ElementType="CheckBox" FullSelectorArgument="&lt;wnd ctrlname='TabTK' /&gt;&lt;wnd ctrlname='TabTTTK' /&gt;&lt;wnd ctrlname='FlowLayoutPanel1' /&gt;&lt;wnd ctrlname='Panel1' /&gt;&lt;wnd ctrlname='chkQD2061' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='TabTK' /&gt;&lt;wnd ctrlname='TabTTTK' /&gt;&lt;wnd ctrlname='FlowLayoutPanel1' /&gt;&lt;wnd ctrlname='Panel1' /&gt;&lt;wnd ctrlname='chkQD2061' check:fulltext='Khai báo số định danh theo chuẩn quản lý giám sát Hải quan tự động tại Cảng hàng không' /&gt;" Guid="4b1473cc-a30f-4c4e-b827-079256904e63" InformativeScreenshot="54bba8028c7c73c8921ce4f1b582a558.png" ScopeSelectorArgument="&lt;wnd app='ecus5vnaccs.exe' ctrlname='frmMain' /&gt;&lt;wnd ctrlname='frmVNACCS_IDA' /&gt;" SearchSteps="Selector, CV" Version="V4" Visibility="Interactive" />
                                                         </uix:NClick.Target>
@@ -970,7 +1036,7 @@
                                                     </Sequence>
                                                   </ui:IfElseIfV2.Then>
                                                 </ui:IfElseIfV2>
-                                                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Số vận đơn'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="434,288" sap2010:WorkflowViewState.IdRef="NTypeInto_223" ScopeIdentifier="624ee1fd-a25d-4187-880b-ab6982eb7df6" Text="[Excel.Sheet(&quot;Input&quot;).Cell(&quot;Y9&quot;)]" Version="V3">
+                                                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Số vận đơn'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="587.2,286.4" sap2010:WorkflowViewState.IdRef="NTypeInto_223" ScopeIdentifier="624ee1fd-a25d-4187-880b-ab6982eb7df6" Text="[Excel.Sheet(&quot;Input&quot;).Cell(&quot;Y9&quot;)]" Version="V3">
                                                   <uix:NTypeInto.Target>
                                                     <uix:TargetAnchorable CVScreenId="c12308f6-792d-4080-a0ee-93c748d092e3" CvElementArea="635, 342, 162, 22" CvType="InputBox" DesignTimeRectangle="635, 343, 161, 20" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;wnd ctrlname='TabTK' /&gt;&lt;wnd ctrlname='TabTTTK' /&gt;&lt;wnd ctrlname='FlowLayoutPanel1' /&gt;&lt;wnd ctrlname='Panel1' /&gt;&lt;wnd ctrlname='txtVAN_DON' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='TabTK' /&gt;&lt;wnd ctrlname='TabTTTK' /&gt;&lt;wnd ctrlname='FlowLayoutPanel1' /&gt;&lt;wnd ctrlname='Panel1' /&gt;&lt;wnd ctrlname='txtVAN_DON' /&gt;" Guid="c414415b-f544-4c41-ad02-7f9a5a5f01f5" InformativeScreenshot="4e3ce2ba4bdd9f7001009d50a09eb530.png" IsResponsive="True" ScopeSelectorArgument="&lt;wnd app='ecus5vnaccs.exe' ctrlname='frmMain' /&gt;&lt;wnd ctrlname='frmVNACCS_IDA' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive">
                                                       <uix:TargetAnchorable.Anchors>
@@ -991,7 +1057,7 @@
                                                     </uix:VerifyExecutionTypeIntoOptions>
                                                   </uix:NTypeInto.VerifyOptions>
                                                 </uix:NTypeInto>
-                                                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Ngày vận đơn'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="434,288" sap2010:WorkflowViewState.IdRef="NTypeInto_224" ScopeIdentifier="624ee1fd-a25d-4187-880b-ab6982eb7df6" Text="[Excel.Sheet(&quot;Input&quot;).Cell(&quot;Z9&quot;)]" Version="V3">
+                                                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Ngày vận đơn'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="587.2,286.4" sap2010:WorkflowViewState.IdRef="NTypeInto_224" ScopeIdentifier="624ee1fd-a25d-4187-880b-ab6982eb7df6" Text="[Excel.Sheet(&quot;Input&quot;).Cell(&quot;Z9&quot;)]" Version="V3">
                                                   <uix:NTypeInto.Target>
                                                     <uix:TargetAnchorable CVScreenId="c12308f6-792d-4080-a0ee-93c748d092e3" CvElementArea="798, 342, 68, 20" CvType="InputBox" DesignTimeRectangle="799, 343, 67, 18" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;wnd ctrlname='TabTK' /&gt;&lt;wnd ctrlname='TabTTTK' /&gt;&lt;wnd ctrlname='FlowLayoutPanel1' /&gt;&lt;wnd ctrlname='Panel1' /&gt;&lt;wnd ctrlname='txtNGAY_VAN_DON' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='TabTK' /&gt;&lt;wnd ctrlname='TabTTTK' /&gt;&lt;wnd ctrlname='FlowLayoutPanel1' /&gt;&lt;wnd ctrlname='Panel1' /&gt;&lt;wnd ctrlname='txtNGAY_VAN_DON' /&gt;" Guid="1e297077-c59f-4026-ae5b-21dd2c5e081f" InformativeScreenshot="d0d4c0faf296f01a981ea1038fce688a.png" IsResponsive="True" ScopeSelectorArgument="&lt;wnd app='ecus5vnaccs.exe' ctrlname='frmMain' /&gt;&lt;wnd ctrlname='frmVNACCS_IDA' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive">
                                                       <uix:TargetAnchorable.Anchors>
@@ -1021,7 +1087,7 @@
                                                     </uix:VerifyExecutionTypeIntoOptions>
                                                   </uix:NTypeInto.VerifyOptions>
                                                 </uix:NTypeInto>
-                                                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Số lượng kiện'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="434,288" sap2010:WorkflowViewState.IdRef="NTypeInto_225" ScopeIdentifier="624ee1fd-a25d-4187-880b-ab6982eb7df6" Text="[Excel.Sheet(&quot;Input&quot;).Cell(&quot;AC9&quot;)]" Version="V3">
+                                                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Số lượng kiện'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="587.2,286.4" sap2010:WorkflowViewState.IdRef="NTypeInto_225" ScopeIdentifier="624ee1fd-a25d-4187-880b-ab6982eb7df6" Text="[Excel.Sheet(&quot;Input&quot;).Cell(&quot;AC9&quot;)]" Version="V3">
                                                   <uix:NTypeInto.Target>
                                                     <uix:TargetAnchorable CVScreenId="c12308f6-792d-4080-a0ee-93c748d092e3" CvElementArea="634, 473, 88, 20" CvType="InputBox" DesignTimeRectangle="635, 474, 86, 18" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;wnd ctrlname='TabTK' /&gt;&lt;wnd ctrlname='TabTTTK' /&gt;&lt;wnd ctrlname='FlowLayoutPanel1' /&gt;&lt;wnd ctrlname='Panel1' /&gt;&lt;wnd ctrlname='txtSO_KIEN' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='TabTK' /&gt;&lt;wnd ctrlname='TabTTTK' /&gt;&lt;wnd ctrlname='FlowLayoutPanel1' /&gt;&lt;wnd ctrlname='Panel1' /&gt;&lt;wnd ctrlname='txtSO_KIEN' /&gt;" Guid="0f9159f9-9d29-4ed4-8bf5-c04325b078d6" InformativeScreenshot="33629f14e0d1e845ce387f5915c99e29.png" IsResponsive="True" ScopeSelectorArgument="&lt;wnd app='ecus5vnaccs.exe' ctrlname='frmMain' /&gt;&lt;wnd ctrlname='frmVNACCS_IDA' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive">
                                                       <uix:TargetAnchorable.Anchors>
@@ -1042,7 +1108,7 @@
                                                     </uix:VerifyExecutionTypeIntoOptions>
                                                   </uix:NTypeInto.VerifyOptions>
                                                 </uix:NTypeInto>
-                                                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Số lượng kiện'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="434,288" sap2010:WorkflowViewState.IdRef="NTypeInto_226" ScopeIdentifier="624ee1fd-a25d-4187-880b-ab6982eb7df6" Text="[Excel.Sheet(&quot;Input&quot;).Cell(&quot;AD9&quot;)]" Version="V3">
+                                                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Số lượng kiện'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="587.2,286.4" sap2010:WorkflowViewState.IdRef="NTypeInto_226" ScopeIdentifier="624ee1fd-a25d-4187-880b-ab6982eb7df6" Text="[Excel.Sheet(&quot;Input&quot;).Cell(&quot;AD9&quot;)]" Version="V3">
                                                   <uix:NTypeInto.Target>
                                                     <uix:TargetAnchorable CVScreenId="c12308f6-792d-4080-a0ee-93c748d092e3" CvElementArea="723, 473, 66, 21" CvType="InputBox" DesignTimeRectangle="726, 476, 43, 15" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;wnd ctrlname='TabTK' /&gt;&lt;wnd ctrlname='TabTTTK' /&gt;&lt;wnd ctrlname='FlowLayoutPanel1' /&gt;&lt;wnd ctrlname='Panel1' /&gt;&lt;wnd ctrlname='cboDVT_KIEN' /&gt;&lt;wnd cls='WindowsForms10.EDIT.*' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='TabTK' /&gt;&lt;wnd ctrlname='TabTTTK' /&gt;&lt;wnd ctrlname='FlowLayoutPanel1' /&gt;&lt;wnd ctrlname='Panel1' /&gt;&lt;wnd ctrlname='cboDVT_KIEN' /&gt;&lt;wnd cls='WindowsForms10.EDIT.*' /&gt;" Guid="037ec734-ea1d-4414-9a3b-e7d8684c8111" InformativeScreenshot="17a9c4f341bde0b1d7037a9aea46b7d5.png" IsResponsive="True" ScopeSelectorArgument="&lt;wnd app='ecus5vnaccs.exe' ctrlname='frmMain' /&gt;&lt;wnd ctrlname='frmVNACCS_IDA' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive">
                                                       <uix:TargetAnchorable.Anchors>
@@ -1063,7 +1129,7 @@
                                                     </uix:VerifyExecutionTypeIntoOptions>
                                                   </uix:NTypeInto.VerifyOptions>
                                                 </uix:NTypeInto>
-                                                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Tổng trọng'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="434,288" sap2010:WorkflowViewState.IdRef="NTypeInto_227" ScopeIdentifier="624ee1fd-a25d-4187-880b-ab6982eb7df6" Text="[Excel.Sheet(&quot;Input&quot;).Cell(&quot;AE9&quot;)]" Version="V3">
+                                                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Tổng trọng'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="587.2,250.4" sap2010:WorkflowViewState.IdRef="NTypeInto_227" ScopeIdentifier="624ee1fd-a25d-4187-880b-ab6982eb7df6" Text="[Excel.Sheet(&quot;Input&quot;).Cell(&quot;AE9&quot;)]" Version="V3">
                                                   <uix:NTypeInto.Target>
                                                     <uix:TargetAnchorable CVScreenId="9f4d5092-0a13-4b5d-bb2d-c50aae523657" CvElementArea="959, 446, 77, 20" CvType="InputBox" DesignTimeRectangle="960, 447, 76, 18" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;wnd ctrlname='TabTK' /&gt;&lt;wnd ctrlname='TabTTTK' /&gt;&lt;wnd ctrlname='FlowLayoutPanel1' /&gt;&lt;wnd ctrlname='Panel1' /&gt;&lt;wnd ctrlname='txtTR_LUONG' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='TabTK' /&gt;&lt;wnd ctrlname='TabTTTK' /&gt;&lt;wnd ctrlname='FlowLayoutPanel1' /&gt;&lt;wnd ctrlname='Panel1' /&gt;&lt;wnd ctrlname='txtTR_LUONG' /&gt;" Guid="088e3eaf-3d12-4316-8120-7a2d7e958456" InformativeScreenshot="1addb3fd4e651b3c441cfadba310d35a.png" IsResponsive="True" ScopeSelectorArgument="&lt;wnd app='ecus5vnaccs.exe' ctrlname='frmMain' /&gt;&lt;wnd ctrlname='frmVNACCS_IDA' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive">
                                                       <uix:TargetAnchorable.Anchors>
@@ -1073,18 +1139,8 @@
                                                       </uix:TargetAnchorable.Anchors>
                                                     </uix:TargetAnchorable>
                                                   </uix:NTypeInto.Target>
-                                                  <uix:NTypeInto.VerifyOptions>
-                                                    <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
-                                                      <uix:VerifyExecutionTypeIntoOptions.Retry>
-                                                        <InArgument x:TypeArguments="x:Boolean" />
-                                                      </uix:VerifyExecutionTypeIntoOptions.Retry>
-                                                      <uix:VerifyExecutionTypeIntoOptions.Timeout>
-                                                        <InArgument x:TypeArguments="x:Double" />
-                                                      </uix:VerifyExecutionTypeIntoOptions.Timeout>
-                                                    </uix:VerifyExecutionTypeIntoOptions>
-                                                  </uix:NTypeInto.VerifyOptions>
                                                 </uix:NTypeInto>
-                                                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Tổng trọng'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="434,288" sap2010:WorkflowViewState.IdRef="NTypeInto_228" ScopeIdentifier="624ee1fd-a25d-4187-880b-ab6982eb7df6" Text="[Excel.Sheet(&quot;Input&quot;).Cell(&quot;AF9&quot;)]" Version="V3">
+                                                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Tổng trọng'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="587.2,286.4" sap2010:WorkflowViewState.IdRef="NTypeInto_228" ScopeIdentifier="624ee1fd-a25d-4187-880b-ab6982eb7df6" Text="[Excel.Sheet(&quot;Input&quot;).Cell(&quot;AF9&quot;)]" Version="V3">
                                                   <uix:NTypeInto.Target>
                                                     <uix:TargetAnchorable CVScreenId="945b6246-bef3-4df1-b571-ac2f78d8f08e" CvElementArea="1037, 446, 63, 21" CvType="InputBox" DesignTimeRectangle="1040, 449, 39, 15" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;wnd ctrlname='TabTK' /&gt;&lt;wnd ctrlname='TabTTTK' /&gt;&lt;wnd ctrlname='FlowLayoutPanel1' /&gt;&lt;wnd ctrlname='Panel1' /&gt;&lt;wnd ctrlname='cboDVT_TR_LUONG' /&gt;&lt;wnd cls='WindowsForms10.EDIT.*' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='TabTK' /&gt;&lt;wnd ctrlname='TabTTTK' /&gt;&lt;wnd ctrlname='FlowLayoutPanel1' /&gt;&lt;wnd ctrlname='Panel1' /&gt;&lt;wnd ctrlname='cboDVT_TR_LUONG' /&gt;&lt;wnd cls='WindowsForms10.EDIT.*' /&gt;" Guid="17dab40c-e9ce-4baf-81ab-84f32701f3a0" InformativeScreenshot="c1518cfacaf4aabde256fbc81a5b4540.png" IsResponsive="True" ScopeSelectorArgument="&lt;wnd app='ecus5vnaccs.exe' ctrlname='frmMain' /&gt;&lt;wnd ctrlname='frmVNACCS_IDA' /&gt;" SearchSteps="Selector, CV" Version="V4" Visibility="Interactive">
                                                       <uix:TargetAnchorable.Anchors>
@@ -1108,7 +1164,7 @@
                                                     </uix:VerifyExecutionTypeIntoOptions>
                                                   </uix:NTypeInto.VerifyOptions>
                                                 </uix:NTypeInto>
-                                                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Double" DisplayName="Type Into 'Mã địa điểm lưu kho hàng chờ'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="434,251" sap2010:WorkflowViewState.IdRef="NTypeInto_229" ScopeIdentifier="624ee1fd-a25d-4187-880b-ab6982eb7df6" Text="[Excel.Sheet(&quot;Input&quot;).Cell(&quot;AG9&quot;)]" Version="V3">
+                                                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Double" DisplayName="Type Into 'Mã địa điểm lưu kho hàng chờ'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="587.2,250.4" sap2010:WorkflowViewState.IdRef="NTypeInto_229" ScopeIdentifier="624ee1fd-a25d-4187-880b-ab6982eb7df6" Text="[Excel.Sheet(&quot;Input&quot;).Cell(&quot;AG9&quot;)]" Version="V3">
                                                   <uix:NTypeInto.Target>
                                                     <uix:TargetAnchorable CVScreenId="302f2e73-3255-442f-bfcd-ba42450d15dd" CvElementArea="723, 466, 68, 23" CvType="InputBox" DesignTimeRectangle="724, 468, 65, 20" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;wnd ctrlname='TabTK' /&gt;&lt;wnd ctrlname='TabTTTK' /&gt;&lt;wnd ctrlname='FlowLayoutPanel1' /&gt;&lt;wnd ctrlname='Panel1' /&gt;&lt;wnd ctrlname='txtMA_DD_LUU_KHO' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='TabTK' /&gt;&lt;wnd ctrlname='TabTTTK' /&gt;&lt;wnd ctrlname='FlowLayoutPanel1' /&gt;&lt;wnd ctrlname='Panel1' /&gt;&lt;wnd ctrlname='txtMA_DD_LUU_KHO' /&gt;" Guid="e3f22d78-1bd8-451f-8abf-ab26d09cb10f" InformativeScreenshot="72b748942f546b554910ac21774a8217.png" IsResponsive="True" ScopeSelectorArgument="&lt;wnd app='ecus5vnaccs.exe' ctrlname='frmMain' /&gt;&lt;wnd ctrlname='frmVNACCS_IDA' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive">
                                                       <uix:TargetAnchorable.Anchors>
@@ -1119,7 +1175,7 @@
                                                     </uix:TargetAnchorable>
                                                   </uix:NTypeInto.Target>
                                                 </uix:NTypeInto>
-                                                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Ký hiệu và số hiệu bao bì'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="434,288" sap2010:WorkflowViewState.IdRef="NTypeInto_230" ScopeIdentifier="624ee1fd-a25d-4187-880b-ab6982eb7df6" Text="[Excel.Sheet(&quot;Input&quot;).Cell(&quot;AI9&quot;)]" Version="V3">
+                                                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Ký hiệu và số hiệu bao bì'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="587.2,286.4" sap2010:WorkflowViewState.IdRef="NTypeInto_230" ScopeIdentifier="624ee1fd-a25d-4187-880b-ab6982eb7df6" Text="[Excel.Sheet(&quot;Input&quot;).Cell(&quot;AI9&quot;)]" Version="V3">
                                                   <uix:NTypeInto.Target>
                                                     <uix:TargetAnchorable CVScreenId="302f2e73-3255-442f-bfcd-ba42450d15dd" CvElementArea="634, 490, 465, 33" CvType="InputBox" DesignTimeRectangle="635, 490, 464, 32" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;wnd ctrlname='TabTK' /&gt;&lt;wnd ctrlname='TabTTTK' /&gt;&lt;wnd ctrlname='FlowLayoutPanel1' /&gt;&lt;wnd ctrlname='Panel1' /&gt;&lt;wnd ctrlname='txtKY_HIEU_SO_HIEU' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='TabTK' /&gt;&lt;wnd ctrlname='TabTTTK' /&gt;&lt;wnd ctrlname='FlowLayoutPanel1' /&gt;&lt;wnd ctrlname='Panel1' /&gt;&lt;wnd ctrlname='txtKY_HIEU_SO_HIEU' /&gt;" Guid="c0988186-172e-4521-83cb-4a31dce8a719" InformativeScreenshot="92eda09970d08d171c5d311e21932a1e.png" IsResponsive="True" ScopeSelectorArgument="&lt;wnd app='ecus5vnaccs.exe' ctrlname='frmMain' /&gt;&lt;wnd ctrlname='frmVNACCS_IDA' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive">
                                                       <uix:TargetAnchorable.Anchors>
@@ -1140,7 +1196,7 @@
                                                     </uix:VerifyExecutionTypeIntoOptions>
                                                   </uix:NTypeInto.VerifyOptions>
                                                 </uix:NTypeInto>
-                                                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Phương tiện vận chuyển'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="434,288" sap2010:WorkflowViewState.IdRef="NTypeInto_231" ScopeIdentifier="624ee1fd-a25d-4187-880b-ab6982eb7df6" Text="[Excel.Sheet(&quot;Input&quot;).Cell(&quot;AJ9&quot;)]" Version="V3">
+                                                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Phương tiện vận chuyển'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="587.2,286.4" sap2010:WorkflowViewState.IdRef="NTypeInto_231" ScopeIdentifier="624ee1fd-a25d-4187-880b-ab6982eb7df6" Text="[Excel.Sheet(&quot;Input&quot;).Cell(&quot;AJ9&quot;)]" Version="V3">
                                                   <uix:NTypeInto.Target>
                                                     <uix:TargetAnchorable CVScreenId="ead333e4-f62e-4d0f-9bc4-a324d02f8923" CvElementArea="634, 523, 68, 22" CvType="InputBox" DesignTimeRectangle="635, 524, 66, 20" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;wnd ctrlname='TabTK' /&gt;&lt;wnd ctrlname='TabTTTK' /&gt;&lt;wnd ctrlname='FlowLayoutPanel1' /&gt;&lt;wnd ctrlname='Panel1' /&gt;&lt;wnd ctrlname='txtMA_PTVT' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='TabTK' /&gt;&lt;wnd ctrlname='TabTTTK' /&gt;&lt;wnd ctrlname='FlowLayoutPanel1' /&gt;&lt;wnd ctrlname='Panel1' /&gt;&lt;wnd ctrlname='txtMA_PTVT' /&gt;" Guid="7ed820da-50ce-4839-bcfe-07e0cddb9dc5" InformativeScreenshot="64a934acb99e30c116c5c1a25459e996.png" IsResponsive="True" ScopeSelectorArgument="&lt;wnd app='ecus5vnaccs.exe' ctrlname='frmMain' /&gt;&lt;wnd ctrlname='frmVNACCS_IDA' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive">
                                                       <uix:TargetAnchorable.Anchors>
@@ -1161,7 +1217,7 @@
                                                     </uix:VerifyExecutionTypeIntoOptions>
                                                   </uix:NTypeInto.VerifyOptions>
                                                 </uix:NTypeInto>
-                                                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Phương tiện vận chuyển'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="434,288" sap2010:WorkflowViewState.IdRef="NTypeInto_232" ScopeIdentifier="624ee1fd-a25d-4187-880b-ab6982eb7df6" Text="[Excel.Sheet(&quot;Input&quot;).Cell(&quot;AK9&quot;)]" Version="V3">
+                                                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Phương tiện vận chuyển'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="587.2,250.4" sap2010:WorkflowViewState.IdRef="NTypeInto_232" ScopeIdentifier="624ee1fd-a25d-4187-880b-ab6982eb7df6" Text="[Excel.Sheet(&quot;Input&quot;).Cell(&quot;AK9&quot;)]" Version="V3">
                                                   <uix:NTypeInto.Target>
                                                     <uix:TargetAnchorable CVScreenId="f4ded990-4f8c-42db-84cb-5b9cf7154222" CvElementArea="702, 523, 249, 22" CvType="InputBox" DesignTimeRectangle="703, 524, 247, 20" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;wnd ctrlname='TabTK' /&gt;&lt;wnd ctrlname='TabTTTK' /&gt;&lt;wnd ctrlname='FlowLayoutPanel1' /&gt;&lt;wnd ctrlname='Panel1' /&gt;&lt;wnd ctrlname='txtTEN_PTVT' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='TabTK' /&gt;&lt;wnd ctrlname='TabTTTK' /&gt;&lt;wnd ctrlname='FlowLayoutPanel1' /&gt;&lt;wnd ctrlname='Panel1' /&gt;&lt;wnd ctrlname='txtTEN_PTVT' /&gt;" Guid="068db119-cae1-4111-9b9f-6b758752c83b" InformativeScreenshot="4f06be7c1d0a02cbb465afee04bb1ed5.png" IsResponsive="True" ScopeSelectorArgument="&lt;wnd app='ecus5vnaccs.exe' ctrlname='frmMain' /&gt;&lt;wnd ctrlname='frmVNACCS_IDA' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive">
                                                       <uix:TargetAnchorable.Anchors>
@@ -1171,18 +1227,8 @@
                                                       </uix:TargetAnchorable.Anchors>
                                                     </uix:TargetAnchorable>
                                                   </uix:NTypeInto.Target>
-                                                  <uix:NTypeInto.VerifyOptions>
-                                                    <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
-                                                      <uix:VerifyExecutionTypeIntoOptions.Retry>
-                                                        <InArgument x:TypeArguments="x:Boolean" />
-                                                      </uix:VerifyExecutionTypeIntoOptions.Retry>
-                                                      <uix:VerifyExecutionTypeIntoOptions.Timeout>
-                                                        <InArgument x:TypeArguments="x:Double" />
-                                                      </uix:VerifyExecutionTypeIntoOptions.Timeout>
-                                                    </uix:VerifyExecutionTypeIntoOptions>
-                                                  </uix:NTypeInto.VerifyOptions>
                                                 </uix:NTypeInto>
-                                                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Ngày hàng đến'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="434,288" sap2010:WorkflowViewState.IdRef="NTypeInto_233" ScopeIdentifier="624ee1fd-a25d-4187-880b-ab6982eb7df6" Text="[Excel.Sheet(&quot;Input&quot;).Cell(&quot;AL9&quot;)]" Version="V3">
+                                                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Ngày hàng đến'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="587.2,250.4" sap2010:WorkflowViewState.IdRef="NTypeInto_233" ScopeIdentifier="624ee1fd-a25d-4187-880b-ab6982eb7df6" Text="[Excel.Sheet(&quot;Input&quot;).Cell(&quot;AL9&quot;)]" Version="V3">
                                                   <uix:NTypeInto.Target>
                                                     <uix:TargetAnchorable CVScreenId="f4ded990-4f8c-42db-84cb-5b9cf7154222" CvElementArea="634, 545, 68, 20" CvType="InputBox" DesignTimeRectangle="635, 546, 66, 18" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;wnd ctrlname='TabTK' /&gt;&lt;wnd ctrlname='TabTTTK' /&gt;&lt;wnd ctrlname='FlowLayoutPanel1' /&gt;&lt;wnd ctrlname='Panel1' /&gt;&lt;wnd ctrlname='txtNGAYDEN' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='TabTK' /&gt;&lt;wnd ctrlname='TabTTTK' /&gt;&lt;wnd ctrlname='FlowLayoutPanel1' /&gt;&lt;wnd ctrlname='Panel1' /&gt;&lt;wnd ctrlname='txtNGAYDEN' /&gt;" Guid="6ae52794-6d0f-4a50-9f8b-334f74a1faff" InformativeScreenshot="ae6d088049047a1ea49c821a048f9779.png" IsResponsive="True" ScopeSelectorArgument="&lt;wnd app='ecus5vnaccs.exe' ctrlname='frmMain' /&gt;&lt;wnd ctrlname='frmVNACCS_IDA' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive">
                                                       <uix:TargetAnchorable.Anchors>
@@ -1192,27 +1238,8 @@
                                                       </uix:TargetAnchorable.Anchors>
                                                     </uix:TargetAnchorable>
                                                   </uix:NTypeInto.Target>
-                                                  <uix:NTypeInto.VerifyOptions>
-                                                    <uix:VerifyExecutionTypeIntoOptions DisplayName="Input 'Ngày hàng đến'" Mode="Appears">
-                                                      <uix:VerifyExecutionTypeIntoOptions.Retry>
-                                                        <InArgument x:TypeArguments="x:Boolean" />
-                                                      </uix:VerifyExecutionTypeIntoOptions.Retry>
-                                                      <uix:VerifyExecutionTypeIntoOptions.Target>
-                                                        <uix:TargetAnchorable CVScreenId="f394a9c5-7247-49a3-809e-1ccbfe7f49c0" CvElementArea="635, 426, 65, 18" CvType="InputBox" DesignTimeRectangle="635, 426, 66, 18" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;wnd ctrlname='TabTK' /&gt;&lt;wnd ctrlname='TabTTTK' /&gt;&lt;wnd ctrlname='FlowLayoutPanel1' /&gt;&lt;wnd ctrlname='Panel1' /&gt;&lt;wnd ctrlname='txtNGAYDEN' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='TabTK' /&gt;&lt;wnd ctrlname='TabTTTK' /&gt;&lt;wnd ctrlname='FlowLayoutPanel1' /&gt;&lt;wnd ctrlname='Panel1' /&gt;&lt;wnd ctrlname='txtNGAYDEN' check:text='__/__/____' /&gt;" Guid="fb8bf7a4-5dde-4524-aa25-96f9f97d2d98" InformativeScreenshot="bbd9f783b95552b81e9f82204b8a7a86.png" IsResponsive="True" ScopeSelectorArgument="&lt;wnd app='ecus5vnaccs.exe' ctrlname='frmMain' /&gt;&lt;wnd ctrlname='frmVNACCS_IDA' /&gt;" SearchSteps="Selector, CV" Version="V4" Visibility="Interactive">
-                                                          <uix:TargetAnchorable.Anchors>
-                                                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                                                              <uix:Target CVScreenId="f394a9c5-7247-49a3-809e-1ccbfe7f49c0" CvTextArea="475, 428, 78, 14" CvTextArgument="Ngay hang den:" CvType="Text" DesignTimeRectangle="473, 428, 84, 13" ElementType="Text" FullSelectorArgument="&lt;wnd ctrlname='TabTK' /&gt;&lt;wnd ctrlname='TabTTTK' /&gt;&lt;wnd ctrlname='FlowLayoutPanel1' /&gt;&lt;wnd ctrlname='Panel1' /&gt;&lt;wnd ctrlname='Label42' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='TabTK' /&gt;&lt;wnd ctrlname='TabTTTK' /&gt;&lt;wnd ctrlname='FlowLayoutPanel1' /&gt;&lt;wnd ctrlname='Panel1' /&gt;&lt;wnd ctrlname='Label42' check:text='Ngày hàng đến:' /&gt;" Guid="dea6560b-6d0e-4acb-8b60-b680bd865af5" SearchSteps="Selector, FuzzySelector, CV" />
-                                                            </scg:List>
-                                                          </uix:TargetAnchorable.Anchors>
-                                                        </uix:TargetAnchorable>
-                                                      </uix:VerifyExecutionTypeIntoOptions.Target>
-                                                      <uix:VerifyExecutionTypeIntoOptions.Timeout>
-                                                        <InArgument x:TypeArguments="x:Double" />
-                                                      </uix:VerifyExecutionTypeIntoOptions.Timeout>
-                                                    </uix:VerifyExecutionTypeIntoOptions>
-                                                  </uix:NTypeInto.VerifyOptions>
                                                 </uix:NTypeInto>
-                                                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Địa điểm dỡ hàng'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="434,251" sap2010:WorkflowViewState.IdRef="NTypeInto_234" ScopeIdentifier="624ee1fd-a25d-4187-880b-ab6982eb7df6" Text="[Excel.Sheet(&quot;Input&quot;).Cell(&quot;AM9&quot;)]" Version="V3">
+                                                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Địa điểm dỡ hàng'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="587.2,250.4" sap2010:WorkflowViewState.IdRef="NTypeInto_234" ScopeIdentifier="624ee1fd-a25d-4187-880b-ab6982eb7df6" Text="[Excel.Sheet(&quot;Input&quot;).Cell(&quot;AM9&quot;)]" Version="V3">
                                                   <uix:NTypeInto.Target>
                                                     <uix:TargetAnchorable CVScreenId="506b448a-bbff-4040-8aed-4a8c33882aa8" CvElementArea="898, 696, 85, 27" CvType="InputBox" DesignTimeRectangle="900, 699, 83, 25" DesignTimeScaleFactor="1.25" ElementType="InputBox" FullSelectorArgument="&lt;wnd ctrlname='TabTK' /&gt;&lt;wnd ctrlname='TabTTTK' /&gt;&lt;wnd ctrlname='FlowLayoutPanel1' /&gt;&lt;wnd ctrlname='Panel1' /&gt;&lt;wnd ctrlname='txtMA_CK' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='TabTK' /&gt;&lt;wnd ctrlname='TabTTTK' /&gt;&lt;wnd ctrlname='FlowLayoutPanel1' /&gt;&lt;wnd ctrlname='Panel1' /&gt;&lt;wnd ctrlname='txtMA_CK' /&gt;" Guid="f5260a82-064d-4dbd-8d42-3f4c1bbc256e" InformativeScreenshot="7fa643170ae8902a8e82ea560620dd01.png" IsResponsive="True" ScopeSelectorArgument="&lt;wnd app='ecus5vnaccs.exe' ctrlname='frmMain' /&gt;&lt;wnd ctrlname='frmVNACCS_IDA' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive">
                                                       <uix:TargetAnchorable.Anchors>
@@ -1267,10 +1294,10 @@
                                                   </uix:NTypeInto.Target>
                                                 </uix:NTypeInto>
                                               </Sequence>
-                                              <Sequence DisplayName="Thông tin chung 2" sap:VirtualizedContainerService.HintSize="512,56.8" sap2010:WorkflowViewState.IdRef="Sequence_121">
+                                              <Sequence DisplayName="Thông tin chung 2" sap:VirtualizedContainerService.HintSize="449.6,11953.6" sap2010:WorkflowViewState.IdRef="Sequence_121">
                                                 <sap:WorkflowViewStateService.ViewState>
                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                   </scg:Dictionary>
                                                 </sap:WorkflowViewStateService.ViewState>
@@ -1417,7 +1444,7 @@
                                                     </uix:TargetAnchorable>
                                                   </uix:NTypeInto.Target>
                                                 </uix:NTypeInto>
-                                                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Double" DisplayName="Type Into 'Giấy phép nhập khẩu'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="387.2,286.4" sap2010:WorkflowViewState.IdRef="NTypeInto_243" ScopeIdentifier="624ee1fd-a25d-4187-880b-ab6982eb7df6" Text="[Excel.Sheet(&quot;Input&quot;).Cell(&quot;AY9&quot;)]" Version="V3">
+                                                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Double" DisplayName="Type Into 'Giấy phép nhập khẩu'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="387.2,250.4" sap2010:WorkflowViewState.IdRef="NTypeInto_243" ScopeIdentifier="624ee1fd-a25d-4187-880b-ab6982eb7df6" Text="[Excel.Sheet(&quot;Input&quot;).Cell(&quot;AY9&quot;)]" Version="V3">
                                                   <uix:NTypeInto.Target>
                                                     <uix:TargetAnchorable CVScreenId="85ce095d-8617-477e-96b9-e156f02fd6ad" CvElementArea="715, 282, 147, 22" CvType="InputBox" DesignTimeRectangle="716, 283, 145, 20" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;wnd ctrlname='TabTK' /&gt;&lt;wnd ctrlname='TabTTTK2' /&gt;&lt;wnd ctrlname='FlowLayoutPanel2' /&gt;&lt;wnd ctrlname='Panel2' /&gt;&lt;wnd ctrlname='txtSO_GP' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='TabTK' /&gt;&lt;wnd ctrlname='TabTTTK2' /&gt;&lt;wnd ctrlname='FlowLayoutPanel2' /&gt;&lt;wnd ctrlname='Panel2' /&gt;&lt;wnd ctrlname='txtSO_GP' /&gt;" Guid="d551fb2d-3f93-4cb0-bf45-2f892b40d623" InformativeScreenshot="c87a76c3d53eb48a4652b8069a3302c6.png" IsResponsive="True" ScopeSelectorArgument="&lt;wnd app='ecus5vnaccs.exe' ctrlname='frmMain' /&gt;&lt;wnd ctrlname='frmVNACCS_IDA' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive">
                                                       <uix:TargetAnchorable.Anchors>
@@ -1427,18 +1454,8 @@
                                                       </uix:TargetAnchorable.Anchors>
                                                     </uix:TargetAnchorable>
                                                   </uix:NTypeInto.Target>
-                                                  <uix:NTypeInto.VerifyOptions>
-                                                    <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
-                                                      <uix:VerifyExecutionTypeIntoOptions.Retry>
-                                                        <InArgument x:TypeArguments="x:Boolean" />
-                                                      </uix:VerifyExecutionTypeIntoOptions.Retry>
-                                                      <uix:VerifyExecutionTypeIntoOptions.Timeout>
-                                                        <InArgument x:TypeArguments="x:Double" />
-                                                      </uix:VerifyExecutionTypeIntoOptions.Timeout>
-                                                    </uix:VerifyExecutionTypeIntoOptions>
-                                                  </uix:NTypeInto.VerifyOptions>
                                                 </uix:NTypeInto>
-                                                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Phân loại hình thức hoá đơn'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="387.2,286.4" sap2010:WorkflowViewState.IdRef="NTypeInto_244" ScopeIdentifier="624ee1fd-a25d-4187-880b-ab6982eb7df6" Text="[Excel.Sheet(&quot;Input&quot;).Cell(&quot;AZ9&quot;) + &quot;[k(Tab)]&quot;]" Version="V3">
+                                                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Phân loại hình thức hoá đơn'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="387.2,250.4" sap2010:WorkflowViewState.IdRef="NTypeInto_244" ScopeIdentifier="624ee1fd-a25d-4187-880b-ab6982eb7df6" Text="[Excel.Sheet(&quot;Input&quot;).Cell(&quot;AZ9&quot;)]" Version="V3">
                                                   <uix:NTypeInto.Target>
                                                     <uix:TargetAnchorable CVScreenId="a5a64bc4-0b69-494a-bdd4-22ded56ddfc8" CvElementArea="633, 367, 228, 22" CvType="InputBox" DesignTimeRectangle="636, 370, 205, 16" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;wnd ctrlname='TabTK' /&gt;&lt;wnd ctrlname='TabTTTK2' /&gt;&lt;wnd ctrlname='FlowLayoutPanel2' /&gt;&lt;wnd ctrlname='Panel2' /&gt;&lt;wnd ctrlname='cboMA_HDTM' /&gt;&lt;wnd cls='WindowsForms10.EDIT.*' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='TabTK' /&gt;&lt;wnd ctrlname='TabTTTK2' /&gt;&lt;wnd ctrlname='FlowLayoutPanel2' /&gt;&lt;wnd ctrlname='Panel2' /&gt;&lt;wnd ctrlname='cboMA_HDTM' /&gt;&lt;wnd cls='WindowsForms10.EDIT.*' /&gt;" Guid="50c70ca5-4169-497f-ab9b-218b205702d9" InformativeScreenshot="c844d1d08af766a80a97e52022a66c18.png" IsResponsive="True" ScopeSelectorArgument="&lt;wnd app='ecus5vnaccs.exe' ctrlname='frmMain' /&gt;&lt;wnd ctrlname='frmVNACCS_IDA' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive">
                                                       <uix:TargetAnchorable.Anchors>
@@ -1448,18 +1465,8 @@
                                                       </uix:TargetAnchorable.Anchors>
                                                     </uix:TargetAnchorable>
                                                   </uix:NTypeInto.Target>
-                                                  <uix:NTypeInto.VerifyOptions>
-                                                    <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
-                                                      <uix:VerifyExecutionTypeIntoOptions.Retry>
-                                                        <InArgument x:TypeArguments="x:Boolean" />
-                                                      </uix:VerifyExecutionTypeIntoOptions.Retry>
-                                                      <uix:VerifyExecutionTypeIntoOptions.Timeout>
-                                                        <InArgument x:TypeArguments="x:Double" />
-                                                      </uix:VerifyExecutionTypeIntoOptions.Timeout>
-                                                    </uix:VerifyExecutionTypeIntoOptions>
-                                                  </uix:NTypeInto.VerifyOptions>
                                                 </uix:NTypeInto>
-                                                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Số hóa đơn'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="387.2,286.4" sap2010:WorkflowViewState.IdRef="NTypeInto_245" ScopeIdentifier="624ee1fd-a25d-4187-880b-ab6982eb7df6" Text="[Excel.Sheet(&quot;Input&quot;).Cell(&quot;BB9&quot;)]" Version="V3">
+                                                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Double" DisplayName="Type Into 'Số hóa đơn'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="387.2,250.4" sap2010:WorkflowViewState.IdRef="NTypeInto_245" ScopeIdentifier="624ee1fd-a25d-4187-880b-ab6982eb7df6" Text="[Excel.Sheet(&quot;Input&quot;).Cell(&quot;BB9&quot;)]" Version="V3">
                                                   <uix:NTypeInto.Target>
                                                     <uix:TargetAnchorable CVScreenId="f430a7e5-1075-4e59-8ad4-800a2d49e46e" CvElementArea="939, 389, 176, 22" CvType="InputBox" DesignTimeRectangle="940, 390, 174, 20" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;wnd ctrlname='TabTK' /&gt;&lt;wnd ctrlname='TabTTTK2' /&gt;&lt;wnd ctrlname='FlowLayoutPanel2' /&gt;&lt;wnd ctrlname='Panel2' /&gt;&lt;wnd ctrlname='txtSO_HDTM' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='TabTK' /&gt;&lt;wnd ctrlname='TabTTTK2' /&gt;&lt;wnd ctrlname='FlowLayoutPanel2' /&gt;&lt;wnd ctrlname='Panel2' /&gt;&lt;wnd ctrlname='txtSO_HDTM' /&gt;" Guid="0e2db2c7-b22c-4b3a-bd4f-0998455883b4" InformativeScreenshot="07006491aec1cfaf6a8deece723246af.png" IsResponsive="True" ScopeSelectorArgument="&lt;wnd app='ecus5vnaccs.exe' ctrlname='frmMain' /&gt;&lt;wnd ctrlname='frmVNACCS_IDA' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive">
                                                       <uix:TargetAnchorable.Anchors>
@@ -1469,18 +1476,8 @@
                                                       </uix:TargetAnchorable.Anchors>
                                                     </uix:TargetAnchorable>
                                                   </uix:NTypeInto.Target>
-                                                  <uix:NTypeInto.VerifyOptions>
-                                                    <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
-                                                      <uix:VerifyExecutionTypeIntoOptions.Retry>
-                                                        <InArgument x:TypeArguments="x:Boolean" />
-                                                      </uix:VerifyExecutionTypeIntoOptions.Retry>
-                                                      <uix:VerifyExecutionTypeIntoOptions.Timeout>
-                                                        <InArgument x:TypeArguments="x:Double" />
-                                                      </uix:VerifyExecutionTypeIntoOptions.Timeout>
-                                                    </uix:VerifyExecutionTypeIntoOptions>
-                                                  </uix:NTypeInto.VerifyOptions>
                                                 </uix:NTypeInto>
-                                                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Ngày phát hành'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="387.2,286.4" sap2010:WorkflowViewState.IdRef="NTypeInto_246" ScopeIdentifier="624ee1fd-a25d-4187-880b-ab6982eb7df6" Text="[Excel.Sheet(&quot;Input&quot;).Cell(&quot;BC9&quot;)]" Version="V3">
+                                                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Ngày phát hành'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="387.2,250.4" sap2010:WorkflowViewState.IdRef="NTypeInto_246" ScopeIdentifier="624ee1fd-a25d-4187-880b-ab6982eb7df6" Text="[Excel.Sheet(&quot;Input&quot;).Cell(&quot;BC9&quot;)]" Version="V3">
                                                   <uix:NTypeInto.Target>
                                                     <uix:TargetAnchorable CVScreenId="f430a7e5-1075-4e59-8ad4-800a2d49e46e" CvElementArea="632, 411, 68, 20" CvType="InputBox" DesignTimeRectangle="634, 412, 65, 18" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;wnd ctrlname='TabTK' /&gt;&lt;wnd ctrlname='TabTTTK2' /&gt;&lt;wnd ctrlname='FlowLayoutPanel2' /&gt;&lt;wnd ctrlname='Panel2' /&gt;&lt;wnd ctrlname='txtNGAY_HDTM' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='TabTK' /&gt;&lt;wnd ctrlname='TabTTTK2' /&gt;&lt;wnd ctrlname='FlowLayoutPanel2' /&gt;&lt;wnd ctrlname='Panel2' /&gt;&lt;wnd ctrlname='txtNGAY_HDTM' /&gt;" Guid="9af8914e-6e09-4032-bcea-b1b412094cb6" InformativeScreenshot="b1cf8afbfbab17a097f83f8e2762a84d.png" IsResponsive="True" ScopeSelectorArgument="&lt;wnd app='ecus5vnaccs.exe' ctrlname='frmMain' /&gt;&lt;wnd ctrlname='frmVNACCS_IDA' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive">
                                                       <uix:TargetAnchorable.Anchors>
@@ -1490,27 +1487,8 @@
                                                       </uix:TargetAnchorable.Anchors>
                                                     </uix:TargetAnchorable>
                                                   </uix:NTypeInto.Target>
-                                                  <uix:NTypeInto.VerifyOptions>
-                                                    <uix:VerifyExecutionTypeIntoOptions DisplayName="Input 'Ngày phát hành'" Mode="Appears">
-                                                      <uix:VerifyExecutionTypeIntoOptions.Retry>
-                                                        <InArgument x:TypeArguments="x:Boolean" />
-                                                      </uix:VerifyExecutionTypeIntoOptions.Retry>
-                                                      <uix:VerifyExecutionTypeIntoOptions.Target>
-                                                        <uix:TargetAnchorable CVScreenId="f430a7e5-1075-4e59-8ad4-800a2d49e46e" CvElementArea="632, 411, 68, 20" CvType="InputBox" DesignTimeRectangle="634, 412, 65, 18" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;wnd ctrlname='TabTK' /&gt;&lt;wnd ctrlname='TabTTTK2' /&gt;&lt;wnd ctrlname='FlowLayoutPanel2' /&gt;&lt;wnd ctrlname='Panel2' /&gt;&lt;wnd ctrlname='txtNGAY_HDTM' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='TabTK' /&gt;&lt;wnd ctrlname='TabTTTK2' /&gt;&lt;wnd ctrlname='FlowLayoutPanel2' /&gt;&lt;wnd ctrlname='Panel2' /&gt;&lt;wnd ctrlname='txtNGAY_HDTM' /&gt;" Guid="102f3d33-75a5-4471-aff1-03c14b639e59" InformativeScreenshot="864d424d5179d8328c25fa8e91f0e475.png" IsResponsive="True" ScopeSelectorArgument="&lt;wnd app='ecus5vnaccs.exe' ctrlname='frmMain' /&gt;&lt;wnd ctrlname='frmVNACCS_IDA' /&gt;" SearchSteps="Selector, CV" Version="V4" Visibility="Interactive">
-                                                          <uix:TargetAnchorable.Anchors>
-                                                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                                                              <uix:Target CVScreenId="f430a7e5-1075-4e59-8ad4-800a2d49e46e" CvTextArea="481, 414, 80, 14" CvTextArgument="Ngay phat hanh:" CvType="Text" DesignTimeRectangle="479, 414, 86, 13" ElementType="Text" FullSelectorArgument="&lt;wnd ctrlname='TabTK' /&gt;&lt;wnd ctrlname='TabTTTK2' /&gt;&lt;wnd ctrlname='FlowLayoutPanel2' /&gt;&lt;wnd ctrlname='Panel2' /&gt;&lt;wnd ctrlname='Label63' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='TabTK' /&gt;&lt;wnd ctrlname='TabTTTK2' /&gt;&lt;wnd ctrlname='FlowLayoutPanel2' /&gt;&lt;wnd ctrlname='Panel2' /&gt;&lt;wnd ctrlname='Label63' check:text='Ngày phát hành:' /&gt;" Guid="58fdd7d9-92f6-40c3-b875-5ccfbccebcb6" SearchSteps="Selector, FuzzySelector, CV" />
-                                                            </scg:List>
-                                                          </uix:TargetAnchorable.Anchors>
-                                                        </uix:TargetAnchorable>
-                                                      </uix:VerifyExecutionTypeIntoOptions.Target>
-                                                      <uix:VerifyExecutionTypeIntoOptions.Timeout>
-                                                        <InArgument x:TypeArguments="x:Double" />
-                                                      </uix:VerifyExecutionTypeIntoOptions.Timeout>
-                                                    </uix:VerifyExecutionTypeIntoOptions>
-                                                  </uix:NTypeInto.VerifyOptions>
                                                 </uix:NTypeInto>
-                                                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Phương thức thanh toán'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="387.2,286.4" sap2010:WorkflowViewState.IdRef="NTypeInto_247" ScopeIdentifier="624ee1fd-a25d-4187-880b-ab6982eb7df6" Text="[Excel.Sheet(&quot;Input&quot;).Cell(&quot;BD9&quot;) + &quot;[k(Tab)]&quot;]" Version="V3">
+                                                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Phương thức thanh toán'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="387.2,250.4" sap2010:WorkflowViewState.IdRef="NTypeInto_247" ScopeIdentifier="624ee1fd-a25d-4187-880b-ab6982eb7df6" Text="[Excel.Sheet(&quot;Input&quot;).Cell(&quot;BD9&quot;) + &quot;[k(Tab)]&quot;]" Version="V3">
                                                   <uix:NTypeInto.Target>
                                                     <uix:TargetAnchorable CVScreenId="f430a7e5-1075-4e59-8ad4-800a2d49e46e" CvElementArea="1001, 411, 113, 22" CvType="InputBox" DesignTimeRectangle="1005, 414, 89, 16" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;wnd ctrlname='TabTK' /&gt;&lt;wnd ctrlname='TabTTTK2' /&gt;&lt;wnd ctrlname='FlowLayoutPanel2' /&gt;&lt;wnd ctrlname='Panel2' /&gt;&lt;wnd ctrlname='cboSPTTT' /&gt;&lt;wnd cls='WindowsForms10.EDIT.*' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='TabTK' /&gt;&lt;wnd ctrlname='TabTTTK2' /&gt;&lt;wnd ctrlname='FlowLayoutPanel2' /&gt;&lt;wnd ctrlname='Panel2' /&gt;&lt;wnd ctrlname='cboSPTTT' /&gt;&lt;wnd cls='WindowsForms10.EDIT.*' /&gt;" Guid="4d05ceed-ef6b-46d0-bca3-5504ca502d3b" InformativeScreenshot="686718b862e9d6cceae72261cba5a6d9.png" IsResponsive="True" ScopeSelectorArgument="&lt;wnd app='ecus5vnaccs.exe' ctrlname='frmMain' /&gt;&lt;wnd ctrlname='frmVNACCS_IDA' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive">
                                                       <uix:TargetAnchorable.Anchors>
@@ -1520,18 +1498,8 @@
                                                       </uix:TargetAnchorable.Anchors>
                                                     </uix:TargetAnchorable>
                                                   </uix:NTypeInto.Target>
-                                                  <uix:NTypeInto.VerifyOptions>
-                                                    <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
-                                                      <uix:VerifyExecutionTypeIntoOptions.Retry>
-                                                        <InArgument x:TypeArguments="x:Boolean" />
-                                                      </uix:VerifyExecutionTypeIntoOptions.Retry>
-                                                      <uix:VerifyExecutionTypeIntoOptions.Timeout>
-                                                        <InArgument x:TypeArguments="x:Double" />
-                                                      </uix:VerifyExecutionTypeIntoOptions.Timeout>
-                                                    </uix:VerifyExecutionTypeIntoOptions>
-                                                  </uix:NTypeInto.VerifyOptions>
                                                 </uix:NTypeInto>
-                                                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Mã phân loại giá hóa đơn'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="387.2,286.4" sap2010:WorkflowViewState.IdRef="NTypeInto_248" ScopeIdentifier="624ee1fd-a25d-4187-880b-ab6982eb7df6" Text="[Excel.Sheet(&quot;Input&quot;).Cell(&quot;BE9&quot;) + &quot;[k(Tab)]&quot;]" Version="V3">
+                                                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Mã phân loại giá hóa đơn'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="387.2,250.4" sap2010:WorkflowViewState.IdRef="NTypeInto_248" ScopeIdentifier="624ee1fd-a25d-4187-880b-ab6982eb7df6" Text="[Excel.Sheet(&quot;Input&quot;).Cell(&quot;BE9&quot;) + &quot;[k(Tab)]&quot;]" Version="V3">
                                                   <uix:NTypeInto.Target>
                                                     <uix:TargetAnchorable CVScreenId="606e2264-ea8c-469d-8419-b8d206bb1507" CvElementArea="632, 432, 67, 23" CvType="InputBox" DesignTimeRectangle="636, 435, 43, 16" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;wnd ctrlname='TabTK' /&gt;&lt;wnd ctrlname='TabTTTK2' /&gt;&lt;wnd ctrlname='FlowLayoutPanel2' /&gt;&lt;wnd ctrlname='Panel2' /&gt;&lt;wnd ctrlname='cboMA_PL_GIA_HDTM' /&gt;&lt;wnd cls='WindowsForms10.EDIT.*' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='TabTK' /&gt;&lt;wnd ctrlname='TabTTTK2' /&gt;&lt;wnd ctrlname='FlowLayoutPanel2' /&gt;&lt;wnd ctrlname='Panel2' /&gt;&lt;wnd ctrlname='cboMA_PL_GIA_HDTM' /&gt;&lt;wnd cls='WindowsForms10.EDIT.*' /&gt;" Guid="8c668448-524d-4c5e-beae-99d756e0c467" InformativeScreenshot="51373403ed81e4fab1044e1280772e72.png" IsResponsive="True" ScopeSelectorArgument="&lt;wnd app='ecus5vnaccs.exe' ctrlname='frmMain' /&gt;&lt;wnd ctrlname='frmVNACCS_IDA' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive">
                                                       <uix:TargetAnchorable.Anchors>
@@ -1541,16 +1509,6 @@
                                                       </uix:TargetAnchorable.Anchors>
                                                     </uix:TargetAnchorable>
                                                   </uix:NTypeInto.Target>
-                                                  <uix:NTypeInto.VerifyOptions>
-                                                    <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
-                                                      <uix:VerifyExecutionTypeIntoOptions.Retry>
-                                                        <InArgument x:TypeArguments="x:Boolean" />
-                                                      </uix:VerifyExecutionTypeIntoOptions.Retry>
-                                                      <uix:VerifyExecutionTypeIntoOptions.Timeout>
-                                                        <InArgument x:TypeArguments="x:Double" />
-                                                      </uix:VerifyExecutionTypeIntoOptions.Timeout>
-                                                    </uix:VerifyExecutionTypeIntoOptions>
-                                                  </uix:NTypeInto.VerifyOptions>
                                                 </uix:NTypeInto>
                                                 <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Điều kiện giá hóa đơn'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="387.2,286.4" sap2010:WorkflowViewState.IdRef="NTypeInto_249" ScopeIdentifier="624ee1fd-a25d-4187-880b-ab6982eb7df6" Text="[Excel.Sheet(&quot;Input&quot;).Cell(&quot;BF9&quot;) + &quot;[k(Tab)]&quot;]" Version="V3">
                                                   <uix:NTypeInto.Target>
@@ -1655,7 +1613,7 @@
                                                     </scg:Dictionary>
                                                   </sap:WorkflowViewStateService.ViewState>
                                                 </uix:NCheckState>
-                                                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Mã phân loại khai trị giá'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="387.2,250.4" sap2010:WorkflowViewState.IdRef="NTypeInto_252" ScopeIdentifier="624ee1fd-a25d-4187-880b-ab6982eb7df6" Text="[Excel.Sheet(&quot;Input&quot;).Cell(&quot;BI9&quot;).ToString + &quot;[k(Tab)]&quot;]" Version="V3">
+                                                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Mã phân loại khai trị giá'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="387.2,250.4" sap2010:WorkflowViewState.IdRef="NTypeInto_252" ScopeIdentifier="624ee1fd-a25d-4187-880b-ab6982eb7df6" Text="[Excel.Sheet(&quot;Input&quot;).Cell(&quot;BI9&quot;).ToString]" Version="V3">
                                                   <uix:NTypeInto.Target>
                                                     <uix:TargetAnchorable CVScreenId="8ccbf206-c2bb-4b7c-bbfb-96f5e3c5790d" CvElementArea="632, 501, 68, 22" CvType="InputBox" DesignTimeRectangle="636, 504, 43, 16" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;wnd ctrlname='TabTK' /&gt;&lt;wnd ctrlname='TabTTTK2' /&gt;&lt;wnd ctrlname='FlowLayoutPanel2' /&gt;&lt;wnd ctrlname='Panel2' /&gt;&lt;wnd ctrlname='cboMA_KHAI_TRGIA' /&gt;&lt;wnd cls='WindowsForms10.EDIT.*' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='TabTK' /&gt;&lt;wnd ctrlname='TabTTTK2' /&gt;&lt;wnd ctrlname='FlowLayoutPanel2' /&gt;&lt;wnd ctrlname='Panel2' /&gt;&lt;wnd ctrlname='cboMA_KHAI_TRGIA' /&gt;&lt;wnd cls='WindowsForms10.EDIT.*' /&gt;" Guid="19fa312b-0c9c-4d8d-9c61-b4d3d4e45fd4" InformativeScreenshot="64c9902826e7f11dc34f5f602400aa9b.png" IsResponsive="True" ScopeSelectorArgument="&lt;wnd app='ecus5vnaccs.exe' ctrlname='frmMain' /&gt;&lt;wnd ctrlname='frmVNACCS_IDA' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive">
                                                       <uix:TargetAnchorable.Anchors>
@@ -1666,22 +1624,12 @@
                                                     </uix:TargetAnchorable>
                                                   </uix:NTypeInto.Target>
                                                 </uix:NTypeInto>
-                                                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Phí vận chuyển '" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="387.2,286.4" sap2010:WorkflowViewState.IdRef="NTypeInto_253" ScopeIdentifier="624ee1fd-a25d-4187-880b-ab6982eb7df6" Text="[Excel.Sheet(&quot;Input&quot;).Cell(&quot;BM9&quot;) + &quot;[k(Tab)]&quot;]" Version="V3">
+                                                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Double" DisplayName="Type Into 'Phí vận chuyển '" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="387.2,250.4" sap2010:WorkflowViewState.IdRef="NTypeInto_253" ScopeIdentifier="624ee1fd-a25d-4187-880b-ab6982eb7df6" Text="[Excel.Sheet(&quot;Input&quot;).Cell(&quot;BM9&quot;)]" Version="V3">
                                                   <uix:NTypeInto.Target>
                                                     <uix:TargetAnchorable CVScreenId="1f8cf2d2-d43b-4cc6-859a-f0d2c3b30984" CvElementArea="632, 567, 68, 23" CvType="InputBox" DesignTimeRectangle="636, 570, 43, 16" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;wnd ctrlname='TabTK' /&gt;&lt;wnd ctrlname='TabTTTK2' /&gt;&lt;wnd ctrlname='FlowLayoutPanel2' /&gt;&lt;wnd ctrlname='Panel2' /&gt;&lt;wnd ctrlname='cboMA_PHI_VC' /&gt;&lt;wnd cls='WindowsForms10.EDIT.*' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='TabTK' /&gt;&lt;wnd ctrlname='TabTTTK2' /&gt;&lt;wnd ctrlname='FlowLayoutPanel2' /&gt;&lt;wnd ctrlname='Panel2' /&gt;&lt;wnd ctrlname='cboMA_PHI_VC' /&gt;&lt;wnd cls='WindowsForms10.EDIT.*' /&gt;" Guid="8337b4e7-c6b5-436a-8e9f-30eb531a078b" InformativeScreenshot="a282dd2a29628bd4a8f15efd9b089dd6.png" ScopeSelectorArgument="&lt;wnd app='ecus5vnaccs.exe' ctrlname='frmMain' /&gt;&lt;wnd ctrlname='frmVNACCS_IDA' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive" />
                                                   </uix:NTypeInto.Target>
-                                                  <uix:NTypeInto.VerifyOptions>
-                                                    <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
-                                                      <uix:VerifyExecutionTypeIntoOptions.Retry>
-                                                        <InArgument x:TypeArguments="x:Boolean" />
-                                                      </uix:VerifyExecutionTypeIntoOptions.Retry>
-                                                      <uix:VerifyExecutionTypeIntoOptions.Timeout>
-                                                        <InArgument x:TypeArguments="x:Double" />
-                                                      </uix:VerifyExecutionTypeIntoOptions.Timeout>
-                                                    </uix:VerifyExecutionTypeIntoOptions>
-                                                  </uix:NTypeInto.VerifyOptions>
                                                 </uix:NTypeInto>
-                                                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Mã tiền'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="387.2,286.4" sap2010:WorkflowViewState.IdRef="NTypeInto_254" ScopeIdentifier="624ee1fd-a25d-4187-880b-ab6982eb7df6" Text="[Excel.Sheet(&quot;Input&quot;).Cell(&quot;BN9&quot;) + &quot;[k(Tab)]&quot;]" Version="V3">
+                                                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Double" DisplayName="Type Into 'Mã tiền'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="387.2,250.4" sap2010:WorkflowViewState.IdRef="NTypeInto_254" ScopeIdentifier="624ee1fd-a25d-4187-880b-ab6982eb7df6" Text="[Excel.Sheet(&quot;Input&quot;).Cell(&quot;BN9&quot;)]" Version="V3">
                                                   <uix:NTypeInto.Target>
                                                     <uix:TargetAnchorable CVScreenId="3e0c8e05-191c-4d04-ae93-87bc730f50d6" CvElementArea="743, 567, 74, 23" CvType="InputBox" DesignTimeRectangle="746, 570, 50, 16" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;wnd ctrlname='TabTK' /&gt;&lt;wnd ctrlname='TabTTTK2' /&gt;&lt;wnd ctrlname='FlowLayoutPanel2' /&gt;&lt;wnd ctrlname='Panel2' /&gt;&lt;wnd ctrlname='cboMA_NT_PHI_VC' /&gt;&lt;wnd cls='WindowsForms10.EDIT.*' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='TabTK' /&gt;&lt;wnd ctrlname='TabTTTK2' /&gt;&lt;wnd ctrlname='FlowLayoutPanel2' /&gt;&lt;wnd ctrlname='Panel2' /&gt;&lt;wnd ctrlname='cboMA_NT_PHI_VC' /&gt;&lt;wnd cls='WindowsForms10.EDIT.*' /&gt;" Guid="50a85314-3664-4388-9676-a5be02306c9d" InformativeScreenshot="3e09854a6502d670dcda857c0f6acb91.png" IsResponsive="True" ScopeSelectorArgument="&lt;wnd app='ecus5vnaccs.exe' ctrlname='frmMain' /&gt;&lt;wnd ctrlname='frmVNACCS_IDA' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive">
                                                       <uix:TargetAnchorable.Anchors>
@@ -1691,18 +1639,8 @@
                                                       </uix:TargetAnchorable.Anchors>
                                                     </uix:TargetAnchorable>
                                                   </uix:NTypeInto.Target>
-                                                  <uix:NTypeInto.VerifyOptions>
-                                                    <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
-                                                      <uix:VerifyExecutionTypeIntoOptions.Retry>
-                                                        <InArgument x:TypeArguments="x:Boolean" />
-                                                      </uix:VerifyExecutionTypeIntoOptions.Retry>
-                                                      <uix:VerifyExecutionTypeIntoOptions.Timeout>
-                                                        <InArgument x:TypeArguments="x:Double" />
-                                                      </uix:VerifyExecutionTypeIntoOptions.Timeout>
-                                                    </uix:VerifyExecutionTypeIntoOptions>
-                                                  </uix:NTypeInto.VerifyOptions>
                                                 </uix:NTypeInto>
-                                                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Phí VC'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="387.2,250.4" sap2010:WorkflowViewState.IdRef="NTypeInto_255" ScopeIdentifier="624ee1fd-a25d-4187-880b-ab6982eb7df6" Text="[Excel.Sheet(&quot;Input&quot;).Cell(&quot;BO9&quot;)]" Version="V3">
+                                                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Double" DisplayName="Type Into 'Phí VC'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="387.2,250.4" sap2010:WorkflowViewState.IdRef="NTypeInto_255" ScopeIdentifier="624ee1fd-a25d-4187-880b-ab6982eb7df6" Text="[Excel.Sheet(&quot;Input&quot;).Cell(&quot;BO9&quot;)]" Version="V3">
                                                   <uix:NTypeInto.Target>
                                                     <uix:TargetAnchorable CVScreenId="ed0e2f0c-d7fe-4d65-b7d5-1b8ba9eae9c1" CvElementArea="863, 567, 111, 21" CvType="InputBox" DesignTimeRectangle="865, 569, 109, 18" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;wnd ctrlname='TabTK' /&gt;&lt;wnd ctrlname='TabTTTK2' /&gt;&lt;wnd ctrlname='FlowLayoutPanel2' /&gt;&lt;wnd ctrlname='Panel2' /&gt;&lt;wnd ctrlname='txtPHI_VC' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='TabTK' /&gt;&lt;wnd ctrlname='TabTTTK2' /&gt;&lt;wnd ctrlname='FlowLayoutPanel2' /&gt;&lt;wnd ctrlname='Panel2' /&gt;&lt;wnd ctrlname='txtPHI_VC' /&gt;" Guid="4266e5c5-649b-45da-9325-55be55447740" InformativeScreenshot="0c4078cf3afaab5ef0d1af703fdc55a1.png" IsResponsive="True" ScopeSelectorArgument="&lt;wnd app='ecus5vnaccs.exe' ctrlname='frmMain' /&gt;&lt;wnd ctrlname='frmVNACCS_IDA' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive">
                                                       <uix:TargetAnchorable.Anchors>
@@ -1713,7 +1651,7 @@
                                                     </uix:TargetAnchorable>
                                                   </uix:NTypeInto.Target>
                                                 </uix:NTypeInto>
-                                                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Phí bảo hiểm'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="387.2,250.4" sap2010:WorkflowViewState.IdRef="NTypeInto_256" ScopeIdentifier="624ee1fd-a25d-4187-880b-ab6982eb7df6" Text="[Excel.Sheet(&quot;Input&quot;).Cell(&quot;BP9&quot;) + &quot;[k(Tab)]&quot;]" Version="V3">
+                                                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Double" DisplayName="Type Into 'Phí bảo hiểm'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="387.2,250.4" sap2010:WorkflowViewState.IdRef="NTypeInto_256" ScopeIdentifier="624ee1fd-a25d-4187-880b-ab6982eb7df6" Text="[Excel.Sheet(&quot;Input&quot;).Cell(&quot;BP9&quot;)]" Version="V3">
                                                   <uix:NTypeInto.Target>
                                                     <uix:TargetAnchorable CVScreenId="4724fb50-5147-4e95-b549-a8d5eec3711c" CvElementArea="632, 590, 67, 23" CvType="InputBox" DesignTimeRectangle="636, 593, 43, 16" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;wnd ctrlname='TabTK' /&gt;&lt;wnd ctrlname='TabTTTK2' /&gt;&lt;wnd ctrlname='FlowLayoutPanel2' /&gt;&lt;wnd ctrlname='Panel2' /&gt;&lt;wnd ctrlname='cboMA_PHI_BH' /&gt;&lt;wnd cls='WindowsForms10.EDIT.*' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='TabTK' /&gt;&lt;wnd ctrlname='TabTTTK2' /&gt;&lt;wnd ctrlname='FlowLayoutPanel2' /&gt;&lt;wnd ctrlname='Panel2' /&gt;&lt;wnd ctrlname='cboMA_PHI_BH' /&gt;&lt;wnd cls='WindowsForms10.EDIT.*' /&gt;" Guid="9d22577a-e74b-402d-a2cb-df9a22560ebd" InformativeScreenshot="3f67928e8f42b0114b3682bd96a2cc28.png" IsResponsive="True" ScopeSelectorArgument="&lt;wnd app='ecus5vnaccs.exe' ctrlname='frmMain' /&gt;&lt;wnd ctrlname='frmVNACCS_IDA' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive">
                                                       <uix:TargetAnchorable.Anchors>
@@ -1724,7 +1662,7 @@
                                                     </uix:TargetAnchorable>
                                                   </uix:NTypeInto.Target>
                                                 </uix:NTypeInto>
-                                                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Mã tiền'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="387.2,250.4" sap2010:WorkflowViewState.IdRef="NTypeInto_257" ScopeIdentifier="624ee1fd-a25d-4187-880b-ab6982eb7df6" Text="[Excel.Sheet(&quot;Input&quot;).Cell(&quot;BQ9&quot;).ToString + &quot;[k(Tab)]&quot;]" Version="V3">
+                                                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Double" DisplayName="Type Into 'Mã tiền'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="387.2,250.4" sap2010:WorkflowViewState.IdRef="NTypeInto_257" ScopeIdentifier="624ee1fd-a25d-4187-880b-ab6982eb7df6" Text="[Excel.Sheet(&quot;Input&quot;).Cell(&quot;BQ9&quot;).ToString]" Version="V3">
                                                   <uix:NTypeInto.Target>
                                                     <uix:TargetAnchorable CVScreenId="bb7229e3-bde4-4d7c-943d-82a43c5b129a" CvElementArea="743, 590, 74, 22" CvType="InputBox" DesignTimeRectangle="746, 593, 50, 16" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;wnd ctrlname='TabTK' /&gt;&lt;wnd ctrlname='TabTTTK2' /&gt;&lt;wnd ctrlname='FlowLayoutPanel2' /&gt;&lt;wnd ctrlname='Panel2' /&gt;&lt;wnd ctrlname='cboMA_NT_PHI_BH' /&gt;&lt;wnd cls='WindowsForms10.EDIT.*' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='TabTK' /&gt;&lt;wnd ctrlname='TabTTTK2' /&gt;&lt;wnd ctrlname='FlowLayoutPanel2' /&gt;&lt;wnd ctrlname='Panel2' /&gt;&lt;wnd ctrlname='cboMA_NT_PHI_BH' /&gt;&lt;wnd cls='WindowsForms10.EDIT.*' /&gt;" Guid="7e1defa6-934a-4f2e-8968-d26a8f661227" InformativeScreenshot="ae8be6640d53b800ea93a36a9e603d6f.png" IsResponsive="True" ScopeSelectorArgument="&lt;wnd app='ecus5vnaccs.exe' ctrlname='frmMain' /&gt;&lt;wnd ctrlname='frmVNACCS_IDA' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive">
                                                       <uix:TargetAnchorable.Anchors>
@@ -1735,7 +1673,7 @@
                                                     </uix:TargetAnchorable>
                                                   </uix:NTypeInto.Target>
                                                 </uix:NTypeInto>
-                                                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Phí BH'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="387.2,250.4" sap2010:WorkflowViewState.IdRef="NTypeInto_258" ScopeIdentifier="624ee1fd-a25d-4187-880b-ab6982eb7df6" Text="[Excel.Sheet(&quot;Input&quot;).Cell(&quot;BR9&quot;).ToString]" Version="V3">
+                                                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Double" DisplayName="Type Into 'Phí BH'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="387.2,250.4" sap2010:WorkflowViewState.IdRef="NTypeInto_258" ScopeIdentifier="624ee1fd-a25d-4187-880b-ab6982eb7df6" Text="[Excel.Sheet(&quot;Input&quot;).Cell(&quot;BR9&quot;).ToString]" Version="V3">
                                                   <uix:NTypeInto.Target>
                                                     <uix:TargetAnchorable CVScreenId="bb7229e3-bde4-4d7c-943d-82a43c5b129a" CvElementArea="863, 591, 112, 20" CvType="InputBox" DesignTimeRectangle="865, 592, 109, 18" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;wnd ctrlname='TabTK' /&gt;&lt;wnd ctrlname='TabTTTK2' /&gt;&lt;wnd ctrlname='FlowLayoutPanel2' /&gt;&lt;wnd ctrlname='Panel2' /&gt;&lt;wnd ctrlname='txtPHI_BH' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='TabTK' /&gt;&lt;wnd ctrlname='TabTTTK2' /&gt;&lt;wnd ctrlname='FlowLayoutPanel2' /&gt;&lt;wnd ctrlname='Panel2' /&gt;&lt;wnd ctrlname='txtPHI_BH' /&gt;" Guid="b2cba793-4da1-4749-91fa-b9b18edaf705" InformativeScreenshot="296842a6295157b9e07e21771a6481ab.png" IsResponsive="True" ScopeSelectorArgument="&lt;wnd app='ecus5vnaccs.exe' ctrlname='frmMain' /&gt;&lt;wnd ctrlname='frmVNACCS_IDA' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive">
                                                       <uix:TargetAnchorable.Anchors>
@@ -2040,10 +1978,10 @@
                                                   </uix:NTypeInto.Target>
                                                 </uix:NTypeInto>
                                               </Sequence>
-                                              <Sequence DisplayName="Danh sách hàng" sap:VirtualizedContainerService.HintSize="512,10727.2" sap2010:WorkflowViewState.IdRef="Sequence_115">
+                                              <Sequence DisplayName="Danh sách hàng" sap:VirtualizedContainerService.HintSize="449.6,56.8" sap2010:WorkflowViewState.IdRef="Sequence_115">
                                                 <sap:WorkflowViewStateService.ViewState>
                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                                                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                   </scg:Dictionary>
                                                 </sap:WorkflowViewStateService.ViewState>
@@ -2097,7 +2035,7 @@
                                                     </uix:TargetAnchorable>
                                                   </uix:NTypeInto.Target>
                                                 </uix:NTypeInto>
-                                                <If Condition="[Excel.Sheet(&quot;Input&quot;).Cell(&quot;P9&quot;) = &quot;Kinh doanh&quot;]" sap:VirtualizedContainerService.HintSize="449.6,8420" sap2010:WorkflowViewState.IdRef="If_9">
+                                                <If Condition="[Excel.Sheet(&quot;Input&quot;).Cell(&quot;P9&quot;) = &quot;Kinh doanh&quot;]" sap:VirtualizedContainerService.HintSize="449.6,8418.4" sap2010:WorkflowViewState.IdRef="If_9">
                                                   <sap:WorkflowViewStateService.ViewState>
                                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -2105,7 +2043,7 @@
                                                     </scg:Dictionary>
                                                   </sap:WorkflowViewStateService.ViewState>
                                                   <If.Then>
-                                                    <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,4160" sap2010:WorkflowViewState.IdRef="Sequence_113">
+                                                    <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,4158.4" sap2010:WorkflowViewState.IdRef="Sequence_113">
                                                       <sap:WorkflowViewStateService.ViewState>
                                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -2117,7 +2055,7 @@
                                                           <uix:TargetAnchorable DesignTimeRectangle="509, 187, 160, 23" DesignTimeScaleFactor="1" ElementType="Cell" FullSelectorArgument="&lt;wnd ctrlname='GroupBox7' /&gt;&lt;wnd ctrlname='grdData' /&gt;&lt;ctrl name='Row1' role='row' /&gt;&lt;ctrl name='Cột Excel Row1' role='cell' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='GroupBox7' /&gt;&lt;wnd ctrlname='grdData' /&gt;&lt;ctrl name='Row1' role='row' /&gt;&lt;ctrl name='Cột Excel Row1' role='cell' automationid='' /&gt;" Guid="dd2bd13d-ef4f-4a07-ac0c-517beb988062" InformativeScreenshot="0ef94c031fdeefdae2aa93a05ce0ded7.png" ScopeSelectorArgument="&lt;wnd app='ecus5vnaccs.exe' ctrlname='frmExcel' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive" />
                                                         </uix:NTypeInto.Target>
                                                       </uix:NTypeInto>
-                                                      <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Tên hàng'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="354,288" sap2010:WorkflowViewState.IdRef="NTypeInto_318" ScopeIdentifier="624ee1fd-a25d-4187-880b-ab6982eb7df6" Text="[&quot;DD&quot;.ToString]" Version="V3">
+                                                      <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Tên hàng'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="353.6,286.4" sap2010:WorkflowViewState.IdRef="NTypeInto_318" ScopeIdentifier="624ee1fd-a25d-4187-880b-ab6982eb7df6" Text="[&quot;DD&quot;.ToString]" Version="V3">
                                                         <uix:NTypeInto.Target>
                                                           <uix:TargetAnchorable CVScreenId="660e2e92-fb2e-4326-b1c2-7013b4e91fb3" CvTextArea="579, 168, 17, 12" CvTextArgument="DC" CvType="Text" DesignTimeRectangle="509, 164, 160, 23" DesignTimeScaleFactor="1" ElementType="Cell" FullSelectorArgument="&lt;wnd ctrlname='GroupBox7' /&gt;&lt;wnd ctrlname='grdData' /&gt;&lt;ctrl name='Row0' role='row' /&gt;&lt;ctrl name='Cột Excel Row0' role='cell' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='GroupBox7' /&gt;&lt;wnd ctrlname='grdData' /&gt;&lt;ctrl name='Row0' role='row' /&gt;&lt;ctrl name='Cột Excel Row0' role='cell' automationid='' /&gt;" Guid="9f3b6e82-26cb-4f35-9bc1-777645c01e26" InformativeScreenshot="cf9a10d8a192061cd03fcdf8c89e382f.png" ScopeSelectorArgument="&lt;wnd app='ecus5vnaccs.exe' ctrlname='frmExcel' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive" />
                                                         </uix:NTypeInto.Target>
@@ -2366,7 +2304,7 @@
                                                   </uix:NClick.VerifyOptions>
                                                 </uix:NClick>
                                               </Sequence>
-                                              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click '&amp;Ghi'" sap:VirtualizedContainerService.HintSize="512,225.6" sap2010:WorkflowViewState.IdRef="NClick_78" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="624ee1fd-a25d-4187-880b-ab6982eb7df6" Version="V3">
+                                              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click '&amp;Ghi'" sap:VirtualizedContainerService.HintSize="449.6,225.6" sap2010:WorkflowViewState.IdRef="NClick_78" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="624ee1fd-a25d-4187-880b-ab6982eb7df6" Version="V3">
                                                 <uix:NClick.Target>
                                                   <uix:TargetAnchorable CVScreenId="d6f52dc7-a04a-44fa-a3ad-c5759feb9957" CvElementArea="931, 669, 75, 27" CvTextArea="966, 676, 19, 12" CvTextArgument="Ghi" CvType="Button" DesignTimeRectangle="931, 670, 75, 26" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;wnd ctrlname='btnGhi' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='btnGhi' check:text='&amp;amp;Ghi' /&gt;" Guid="b8ceacaa-baf0-4a8d-b9b1-e23ed943b009" InformativeScreenshot="a2bcdc1d09a4de767763dc4b7104a168.png" ScopeSelectorArgument="&lt;wnd app='ecus5vnaccs.exe' ctrlname='frmMain' /&gt;&lt;wnd ctrlname='frmVNACCS_IDA' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive" />
                                                 </uix:NClick.Target>
@@ -2381,7 +2319,7 @@
                                                   </uix:VerifyExecutionOptions>
                                                 </uix:NClick.VerifyOptions>
                                               </uix:NClick>
-                                              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Đồng ý'" sap:VirtualizedContainerService.HintSize="496,227" sap2010:WorkflowViewState.IdRef="NClick_79" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="624ee1fd-a25d-4187-880b-ab6982eb7df6" Version="V3">
+                                              <uix:NClick ActivateBefore="True" ClickType="Single" ContinueOnError="True" DisplayName="Click 'Đồng ý'" sap:VirtualizedContainerService.HintSize="449.6,225.6" sap2010:WorkflowViewState.IdRef="NClick_79" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="624ee1fd-a25d-4187-880b-ab6982eb7df6" Version="V3">
                                                 <uix:NClick.Target>
                                                   <uix:TargetAnchorable CVScreenId="59f0cf8f-798b-4064-9bb0-c1994cb64428" CvElementArea="376, 328, 108, 31" CvTextArea="415, 333, 36, 18" CvTextArgument="Dong" CvType="Button" DesignTimeRectangle="376, 328, 110, 33" DesignTimeScaleFactor="1.25" ElementType="Button" FullSelectorArgument="&lt;wnd ctrlname='btnDongY' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='btnDongY' check:text='Đồng ý' /&gt;" Guid="4b831e36-0a16-4754-8540-823d2856c9c6" InformativeScreenshot="ac476c2e96d7672520dccda1cb0088ed.png" ScopeSelectorArgument="&lt;wnd app='ecus5vnaccs.exe' ctrlname='frmCanhBaoVanDon' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive" />
                                                 </uix:NClick.Target>
@@ -2396,7 +2334,7 @@
                                                   </uix:VerifyExecutionOptions>
                                                 </uix:NClick.VerifyOptions>
                                               </uix:NClick>
-                                              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click '&amp;OK'" sap:VirtualizedContainerService.HintSize="496,227" sap2010:WorkflowViewState.IdRef="NClick_80" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="624ee1fd-a25d-4187-880b-ab6982eb7df6" Version="V3">
+                                              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click '&amp;OK'" sap:VirtualizedContainerService.HintSize="449.6,225.6" sap2010:WorkflowViewState.IdRef="NClick_80" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="624ee1fd-a25d-4187-880b-ab6982eb7df6" Version="V3">
                                                 <uix:NClick.Target>
                                                   <uix:TargetAnchorable CVScreenId="0d590cf3-edac-48cf-a856-34e79c2ef4c3" CvElementArea="104, 106, 109, 32" CvTextArea="156, 115, 22, 15" CvTextArgument="OK" CvType="Button" DesignTimeRectangle="105, 107, 110, 33" DesignTimeScaleFactor="1.25" ElementType="Button" FullSelectorArgument="&lt;wnd ctrlname='cmdCancel' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='cmdCancel' check:text='&amp;amp;OK' /&gt;" Guid="2698af7c-4ab6-4919-8c77-472ae80dc5db" InformativeScreenshot="bd7fb6fa7a34f174d9a32cd0014ed35d.png" ScopeSelectorArgument="&lt;wnd app='ecus5vnaccs.exe' ctrlname='frmMsgBox' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive" />
                                                 </uix:NClick.Target>
@@ -2411,18 +2349,18 @@
                                                   </uix:VerifyExecutionOptions>
                                                 </uix:NClick.VerifyOptions>
                                               </uix:NClick>
-                                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="496,177" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[filename + &quot; Đã hoàn thành&quot; + Date.Now.ToString]" />
-                                              <ui:AppendLine File="{x:Null}" DisplayName="Append Line" FileName="D:\RPA_HDL\Import Declaration\logs\Logs.txt.txt" sap:VirtualizedContainerService.HintSize="496,167" sap2010:WorkflowViewState.IdRef="AppendLine_5" Text="[filename + &quot; Đã hoàn thành&quot; + Date.Now.ToString]" UseDefaultEncoding="False" />
-                                              <ui:MoveFile ContinueOnError="{x:Null}" DestinationResource="{x:Null}" PathResource="{x:Null}" Destination="D:\RPA_HDL\Import Declaration\results\SuccessFiles" DisplayName="Move File" sap:VirtualizedContainerService.HintSize="496,193" sap2010:WorkflowViewState.IdRef="MoveFile_2" Overwrite="True" Path="[currentItem]" />
-                                              <ui:KillProcess AppliesTo="{x:Null}" ContinueOnError="{x:Null}" Process="{x:Null}" DisplayName="Kill Process" sap:VirtualizedContainerService.HintSize="496,167" sap2010:WorkflowViewState.IdRef="KillProcess_3" ProcessName="EXCEL" />
-                                              <Delay Duration="00:00:01" sap:VirtualizedContainerService.HintSize="496,116" sap2010:WorkflowViewState.IdRef="Delay_1" />
+                                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="449.6,176" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[filename + &quot; Đã hoàn thành&quot; + Date.Now.ToString]" />
+                                              <ui:AppendLine File="{x:Null}" DisplayName="Append Line" FileName="D:\RPA_HDL\Import Declaration\logs\Logs.txt" sap:VirtualizedContainerService.HintSize="449.6,166.4" sap2010:WorkflowViewState.IdRef="AppendLine_5" Text="[filename + &quot; Đã hoàn thành&quot; + Date.Now.ToString]" UseDefaultEncoding="False" />
+                                              <ui:MoveFile ContinueOnError="{x:Null}" DestinationResource="{x:Null}" PathResource="{x:Null}" Destination="D:\RPA_HDL\Import Declaration\SuccessFiles" DisplayName="Move File" sap:VirtualizedContainerService.HintSize="449.6,192" sap2010:WorkflowViewState.IdRef="MoveFile_2" Overwrite="True" Path="[currentItem]" />
+                                              <ui:KillProcess AppliesTo="{x:Null}" ContinueOnError="{x:Null}" Process="{x:Null}" DisplayName="Kill Process" sap:VirtualizedContainerService.HintSize="449.6,166.4" sap2010:WorkflowViewState.IdRef="KillProcess_3" ProcessName="EXCEL" />
+                                              <Delay Duration="00:00:01" sap:VirtualizedContainerService.HintSize="449.6,113.6" sap2010:WorkflowViewState.IdRef="Delay_1" />
                                             </Sequence>
                                           </TryCatch.Try>
                                           <TryCatch.Catches>
-                                            <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="577.6,23.2" sap2010:WorkflowViewState.IdRef="Catch`1_3">
+                                            <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="1020.8,2322.4" sap2010:WorkflowViewState.IdRef="Catch`1_3">
                                               <sap:WorkflowViewStateService.ViewState>
                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                 </scg:Dictionary>
                                               </sap:WorkflowViewStateService.ViewState>
@@ -2430,14 +2368,14 @@
                                                 <ActivityAction.Argument>
                                                   <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                                                 </ActivityAction.Argument>
-                                                <Sequence DisplayName="Take screenshot" sap:VirtualizedContainerService.HintSize="496,1529.6" sap2010:WorkflowViewState.IdRef="Sequence_122">
+                                                <Sequence DisplayName="Take screenshot" sap:VirtualizedContainerService.HintSize="1014.4,2251.2" sap2010:WorkflowViewState.IdRef="Sequence_122">
                                                   <sap:WorkflowViewStateService.ViewState>
                                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                     </scg:Dictionary>
                                                   </sap:WorkflowViewStateService.ViewState>
-                                                  <Assign sap:VirtualizedContainerService.HintSize="433.6,114.4" sap2010:WorkflowViewState.IdRef="Assign_9">
+                                                  <Assign sap:VirtualizedContainerService.HintSize="952,114.4" sap2010:WorkflowViewState.IdRef="Assign_9">
                                                     <Assign.To>
                                                       <OutArgument x:TypeArguments="x:String">[filename]</OutArgument>
                                                     </Assign.To>
@@ -2445,18 +2383,76 @@
                                                       <InArgument x:TypeArguments="x:String">[Path.GetFileName(currentItem.ToString).ToString]</InArgument>
                                                     </Assign.Value>
                                                   </Assign>
-                                                  <uix:NTakeScreenshot DisplayName="Take Screenshot 'Đang tự'" FileName="[&quot;D:\RPA_HDL\Import Declaration\screenshot\&quot; + filename + &quot;.png&quot;]" FileNameMode="DateTime" sap:VirtualizedContainerService.HintSize="433.6,265.6" sap2010:WorkflowViewState.IdRef="NTakeScreenshot_3" ScopeIdentifier="624ee1fd-a25d-4187-880b-ab6982eb7df6" Version="V3">
+                                                  <uix:NTakeScreenshot DisplayName="Take Screenshot 'Đang tự'" FileName="[&quot;D:\RPA_HDL\Import Declaration\screenshot error\&quot; + filename + &quot;.png&quot;]" FileNameMode="DateTime" sap:VirtualizedContainerService.HintSize="952,265.6" sap2010:WorkflowViewState.IdRef="NTakeScreenshot_3" ScopeIdentifier="624ee1fd-a25d-4187-880b-ab6982eb7df6" Version="V3">
                                                     <uix:NTakeScreenshot.Target>
                                                       <uix:TargetAnchorable DesignTimeRectangle="5, 119, 1920, 889" DesignTimeScaleFactor="1.25" FullSelectorArgument="&lt;wnd cls='WindowsForms10.MDICLIENT.*' /&gt;" FuzzySelectorArgument="&lt;wnd cls='WindowsForms10.MDICLIENT.*' check:text='Đang tự động lấy phản hồi từ Hải quan' /&gt;" Guid="25d9b143-76e3-40e2-8d18-b4db196effff" ImageBase64="" InformativeScreenshot="bbd556d6cd6404c4783c3970035520e9.png" ScopeSelectorArgument="&lt;wnd app='ecus5vnaccs.exe' ctrlname='frmMain' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
                                                     </uix:NTakeScreenshot.Target>
                                                   </uix:NTakeScreenshot>
-                                                  <uix:NClosePopup PopupException="{x:Null}" PopupHandled="{x:Null}" DisplayName="Close Popup" sap:VirtualizedContainerService.HintSize="434,181" sap2010:WorkflowViewState.IdRef="NClosePopup_3" PreferredButtons="[New String(){&quot;Close&quot;,&quot;Cancel&quot;}]" Version="V3" />
-                                                  <ui:AppendLine File="{x:Null}" DisplayName="Append Line" FileName="D:\RPA_HDL\Import Declaration\logs\Logs.txt.txt" sap:VirtualizedContainerService.HintSize="434,167" sap2010:WorkflowViewState.IdRef="AppendLine_4" Text="[filename + &quot;Lỗi &quot; + exception.Message +&quot;- &quot; + Date.Now.ToString]" UseDefaultEncoding="False" />
-                                                  <ui:MoveFile ContinueOnError="{x:Null}" DestinationResource="{x:Null}" PathResource="{x:Null}" Destination="D:\RPA_HDL\Import Declaration\results\ErrorFiles" DisplayName="Move File" sap:VirtualizedContainerService.HintSize="434,193" sap2010:WorkflowViewState.IdRef="MoveFile_1" Overwrite="True" Path="[currentItem]" />
-                                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,177" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Error" Message="[filename + &quot;Lỗi &quot; + exception.Message +&quot;- &quot; + Date.Now.ToString]" />
-                                                  <ui:KillProcess AppliesTo="{x:Null}" ContinueOnError="{x:Null}" Process="{x:Null}" DisplayName="Kill Process" sap:VirtualizedContainerService.HintSize="434,167" sap2010:WorkflowViewState.IdRef="KillProcess_4" ProcessName="EXCEL" />
-                                                  <Delay Duration="00:00:01" sap:VirtualizedContainerService.HintSize="434,123" sap2010:WorkflowViewState.IdRef="Delay_2" />
-                                                  <ui:Break sap:VirtualizedContainerService.HintSize="434,50" sap2010:WorkflowViewState.IdRef="Break_1" />
+                                                  <uix:NClosePopup PopupException="{x:Null}" PopupHandled="{x:Null}" DisplayName="Close Popup" sap:VirtualizedContainerService.HintSize="952,180" sap2010:WorkflowViewState.IdRef="NClosePopup_3" PreferredButtons="[New String(){&quot;Close&quot;,&quot;Cancel&quot;}]" Version="V3" />
+                                                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Close'" sap:VirtualizedContainerService.HintSize="952,225.6" sap2010:WorkflowViewState.IdRef="NClick_86" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="624ee1fd-a25d-4187-880b-ab6982eb7df6" Version="V3">
+                                                    <uix:NClick.Target>
+                                                      <uix:TargetAnchorable CVScreenId="a91c14a0-5d53-499e-bbd2-a0829c3e09a1" CvElementArea="1519, 188, 43, 26" CvType="CloseButton" DesignTimeRectangle="1521, 191, 40, 22" DesignTimeScaleFactor="1.25" ElementType="Button" FullSelectorArgument="&lt;wnd ctrlname='frmVNACCS_IDA' /&gt;&lt;ctrl name='Close' role='push button' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='frmVNACCS_IDA' /&gt;&lt;ctrl name='Close' role='push button' automationid='' check:text='Close' /&gt;" Guid="afbe1008-4793-49ca-856b-fc9186a75785" InformativeScreenshot="4688129ebfaaae30d9f500060155596e.png" ScopeSelectorArgument="&lt;wnd app='ecus5vnaccs.exe' ctrlname='frmMain' /&gt;" SearchSteps="Selector, CV" Version="V4" Visibility="Interactive" />
+                                                    </uix:NClick.Target>
+                                                    <uix:NClick.VerifyOptions>
+                                                      <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                                        <uix:VerifyExecutionOptions.Retry>
+                                                          <InArgument x:TypeArguments="x:Boolean" />
+                                                        </uix:VerifyExecutionOptions.Retry>
+                                                        <uix:VerifyExecutionOptions.Timeout>
+                                                          <InArgument x:TypeArguments="x:Double" />
+                                                        </uix:VerifyExecutionOptions.Timeout>
+                                                      </uix:VerifyExecutionOptions>
+                                                    </uix:NClick.VerifyOptions>
+                                                  </uix:NClick>
+                                                  <uix:NCheckState DisplayName="Check App State 'Thông báo'" sap:VirtualizedContainerService.HintSize="952,559.2" sap2010:WorkflowViewState.IdRef="NCheckState_12" ScopeIdentifier="624ee1fd-a25d-4187-880b-ab6982eb7df6" Version="V3">
+                                                    <uix:NCheckState.IfExists>
+                                                      <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="449.6,308.8" sap2010:WorkflowViewState.IdRef="Sequence_127">
+                                                        <sap:WorkflowViewStateService.ViewState>
+                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                          </scg:Dictionary>
+                                                        </sap:WorkflowViewStateService.ViewState>
+                                                        <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click '&amp;No'" sap:VirtualizedContainerService.HintSize="387.2,218.4" sap2010:WorkflowViewState.IdRef="NClick_84" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="624ee1fd-a25d-4187-880b-ab6982eb7df6" Version="V3">
+                                                          <uix:NClick.Target>
+                                                            <uix:TargetAnchorable CVScreenId="f59fd10d-c786-40e1-a27a-94c3b1b7e383" CvElementArea="147, 106, 110, 33" CvTextArea="200, 115, 20, 16" CvTextArgument="No" CvType="Button" DesignTimeRectangle="148, 107, 110, 33" DesignTimeScaleFactor="1.25" ElementType="Button" FullSelectorArgument="&lt;wnd ctrlname='cmdNo' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='cmdNo' check:text='&amp;amp;No' /&gt;" Guid="3281fc36-d918-425a-b1ce-97be91be2a4a" InformativeScreenshot="fba9b24e173dfd4125e9dda3bf219490.png" ScopeSelectorArgument="&lt;wnd app='ecus5vnaccs.exe' ctrlname='frmMsgBox' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive" />
+                                                          </uix:NClick.Target>
+                                                          <uix:NClick.VerifyOptions>
+                                                            <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                                              <uix:VerifyExecutionOptions.Retry>
+                                                                <InArgument x:TypeArguments="x:Boolean" />
+                                                              </uix:VerifyExecutionOptions.Retry>
+                                                              <uix:VerifyExecutionOptions.Timeout>
+                                                                <InArgument x:TypeArguments="x:Double" />
+                                                              </uix:VerifyExecutionOptions.Timeout>
+                                                            </uix:VerifyExecutionOptions>
+                                                          </uix:NClick.VerifyOptions>
+                                                        </uix:NClick>
+                                                      </Sequence>
+                                                    </uix:NCheckState.IfExists>
+                                                    <uix:NCheckState.IfNotExists>
+                                                      <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="449.6,106.4" sap2010:WorkflowViewState.IdRef="Sequence_128">
+                                                        <sap:WorkflowViewStateService.ViewState>
+                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                          </scg:Dictionary>
+                                                        </sap:WorkflowViewStateService.ViewState>
+                                                      </Sequence>
+                                                    </uix:NCheckState.IfNotExists>
+                                                    <uix:NCheckState.Target>
+                                                      <uix:TargetAnchorable DesignTimeRectangle="0, 0, 406, 151" DesignTimeScaleFactor="1.25" Guid="542bafac-97be-4478-98a7-20533437a0aa" InformativeScreenshot="a835eeb1f21a808c7efd196249801670.png" ScopeSelectorArgument="&lt;wnd app='ecus5vnaccs.exe' ctrlname='frmMsgBox' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive">
+                                                        <uix:TargetAnchorable.FuzzySelectorArgument>
+                                                          <InArgument x:TypeArguments="x:String">
+                                                            <Literal x:TypeArguments="x:String" Value="" />
+                                                          </InArgument>
+                                                        </uix:TargetAnchorable.FuzzySelectorArgument>
+                                                      </uix:TargetAnchorable>
+                                                    </uix:NCheckState.Target>
+                                                  </uix:NCheckState>
+                                                  <ui:AppendLine File="{x:Null}" DisplayName="Append Line" FileName="D:\RPA_HDL\Import Declaration\logs\Logs.txt" sap:VirtualizedContainerService.HintSize="952,166.4" sap2010:WorkflowViewState.IdRef="AppendLine_4" Text="[filename + &quot;Lỗi &quot; + exception.Message +&quot;- &quot; + Date.Now.ToString]" UseDefaultEncoding="False" />
+                                                  <ui:MoveFile ContinueOnError="{x:Null}" DestinationResource="{x:Null}" PathResource="{x:Null}" Destination="D:\RPA_HDL\Import Declaration\ErrorFiles" DisplayName="Move File" sap:VirtualizedContainerService.HintSize="952,192" sap2010:WorkflowViewState.IdRef="MoveFile_1" Overwrite="True" Path="[currentItem]" />
+                                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="952,176" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Error" Message="[filename + &quot;Lỗi &quot; + exception.Message +&quot;- &quot; + Date.Now.ToString]" />
+                                                  <ui:KillProcess AppliesTo="{x:Null}" ContinueOnError="{x:Null}" Process="{x:Null}" DisplayName="Kill Process" sap:VirtualizedContainerService.HintSize="952,166.4" sap2010:WorkflowViewState.IdRef="KillProcess_4" ProcessName="EXCEL" />
+                                                  <Delay Duration="00:00:01" sap:VirtualizedContainerService.HintSize="952,115.2" sap2010:WorkflowViewState.IdRef="Delay_2" />
                                                 </Sequence>
                                               </ActivityAction>
                                             </Catch>
@@ -2496,7 +2492,7 @@
           <OutArgument x:TypeArguments="x:Int32">[CheckFileExits]</OutArgument>
         </Assign.To>
         <Assign.Value>
-          <InArgument x:TypeArguments="x:Int32">[Directory.GetFiles("D:\RPA_HDL\Import Declaration\data").Count]</InArgument>
+          <InArgument x:TypeArguments="x:Int32">[Directory.GetFiles("D:\RPA_HDL\Import Declaration\input").Count]</InArgument>
         </Assign.Value>
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
