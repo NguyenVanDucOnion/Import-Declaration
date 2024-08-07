@@ -2,3 +2,49 @@
  Đã hoàn thành07/10/2024 10:40:45
  Đã hoàn thành07/10/2024 10:44:09
 IN_NHAP_CTY SEI_00000369.xlsxLỗi The automation failed to find the UI element operation due to a popup blocking the process.- 07/10/2024 10:45:01
+IN_NHAP_CTY KENTA_01KT-CTW2024.xlsxLỗi Failed setting the current sheet to: Input in workbook: D:\RPA_HDL\Import Declaration\input\IN_NHAP_CTY KENTA_01KT-CTW2024.xlsx. Original error message:  0x800AC472- 07/26/2024 09:57:52
+ Đã hoàn thành07/26/2024 10:19:14
+IN_NHAP_CTY NAM GIAO_202400400305.xlsxLỗi The automation failed to find the UI element operation due to a popup blocking the process.- 07/26/2024 10:33:18
+ Đã hoàn thành07/26/2024 11:13:29
+IN_NHAP_CTY KENTA_01KT-CTW2024.xlsxLỗi The automation failed to find the UI element operation due to a popup blocking the process.- 07/26/2024 16:06:17
+ Đã hoàn thành07/26/2024 16:33:17
+ Đã hoàn thành07/26/2024 16:36:55
+ Đã hoàn thành07/26/2024 16:42:19
+ Đã hoàn thành07/26/2024 16:46:28
+ Đã hoàn thành07/26/2024 16:50:04
+IN_NHAP_CTY SEI_00000369.xlsxLỗi The automation failed to find the UI element operation due to a popup blocking the process.- 07/26/2024 16:50:52
+ Đã hoàn thành07/26/2024 17:28:13
+ Đã hoàn thành07/29/2024 14:03:01
+ Đã hoàn thành07/29/2024 14:06:59
+ Đã hoàn thành07/29/2024 14:10:24
+IN_NHAP_CTY SEI_00000369.xlsxLỗi The automation failed to find the UI element operation due to a popup blocking the process.- 07/29/2024 14:11:14
+ Đã hoàn thành07/31/2024 15:44:40
+ Đã hoàn thành07/31/2024 15:48:24
+ Đã hoàn thành07/31/2024 15:51:37
+ Đã hoàn thành07/31/2024 16:22:05
+ Đã hoàn thành08/01/2024 10:26:07
+ Đã hoàn thành08/01/2024 10:30:06
+ Đã hoàn thành08/01/2024 10:33:33
+ Đã hoàn thành08/01/2024 10:53:02
+ Đã hoàn thành08/01/2024 11:21:15
+ Đã hoàn thành08/01/2024 11:35:22
+ Đã hoàn thành08/01/2024 13:11:03
+ Đã hoàn thành08/01/2024 13:23:00
+ Đã hoàn thành08/01/2024 13:28:28
+ Đã hoàn thành08/01/2024 13:35:26
+IN_NHAP_CTY SEI_00000369.xlsxLỗi Exception of type 'System.Exception' was thrown.- 08/01/2024 14:27:35
+ Đã hoàn thành08/05/2024 10:52:15
+ Đã hoàn thành08/05/2024 10:56:08
+IN_NHAP_CTY INTERPLEX _CL-413-2024.xlsxLỗi The UI element could not be located using the configured Fuzzy selector for Target or Anchor.
+
+ 'Target' search failed for selector:
+	<wnd ctrlname='cmdCancel' check:text='&amp;OK' />
+These are the closest selector matches found:
+	[51%] <wnd ctrlname='cmdNo' check:text='&amp;No' />
+- 08/05/2024 11:00:49
+IN_NHAP_CTY SEI _YSD-SEI072024-12-F3, YSD-SEI072024-12-F4.xlsxLỗi Type activity verification failed.
+Expected text: "CT ".
+Actual result: "CT".- 08/05/2024 11:04:01
+IN_NHAP_CTY ĐỨC THỊNH - 23CK12239.xlsxLỗi Type activity verification failed.
+Expected text: "0200821331".
+Actual result: "0202111866".- 08/05/2024 11:05:50

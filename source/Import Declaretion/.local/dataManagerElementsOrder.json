@@ -12,6 +12,10 @@
       "Path": "Main.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "screenshotError&Sequence_122",
+        "successText&Sequence_116",
+        "folder_Name&Sequence_122",
+        "folderExists&Sequence_122",
         "filename&Flowchart_1",
         "check_loai_hinh&Sequence_120",
         "FilePath&Sequence_3",

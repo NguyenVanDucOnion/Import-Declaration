@@ -823,3 +823,77 @@ AppVer: 6.0.151
 AppDate: 05/06/2024
 Date/Time: 7/4/2024 11:15:19 PM
 ================================================
+Title: ProxyWebservice
+Message: Kiểm tra thông tin Proxy
+StackTrace: URL: http://ecus.vn/EcusService/WebService.asmx
+AppVer: 6.0.154
+AppDate: 26/06/2024
+Date/Time: 07-27-2024 08:15:08 AM
+================================================
+Title: ProxyWebservice
+Message: 6. Hoàn thành thông tin Proxy
+StackTrace: 
+AppVer: 6.0.154
+AppDate: 26/06/2024
+Date/Time: 07-27-2024 08:15:08 AM
+================================================
+Title: KhoiTaoWS_DanhGiaHP
+Message: Object reference not set to an instance of an object.
+StackTrace:    at TSD.ECUSKDNET.frmMain.KhoiTaoWS_DanhGiaHP()
+AppVer: 6.0.154
+AppDate: 26/06/2024
+Date/Time: 07-31-2024 04:05:59 PM
+================================================
+Title: ECUS5NET\KhoiTaoWebserviceDKCKS
+Message: 
+Object reference not set to an instance of an object.
+StackTrace:    at TSD.ECUSKDNET.frmMain.KhoiTaoWebserviceDKCKS()
+AppVer: 6.0.154
+AppDate: 26/06/2024
+Date/Time: 07-31-2024 04:06:00 PM
+================================================
+Title: Send
+Message: Authorization: ecusaccount:qYtrGUtcF^vNX4T%
+StackTrace: URL: https://ecusapplog.thaison.vn:50555/
+AppVer: 6.0.154
+AppDate: 07-31-2024 04:06:01 PM
+Date/Time: 07-31-2024 04:06:01 PM
+================================================
+Title: Send
+Message: BodyParameters: {"loglevel":"ERROR","timelog":"2024-07-31T16:06:01.7028686+07:00","application":"ECUS5VNACCS2018","applicationVer":"6.0.154","service":"ECUS5NET","description":"ECUS5NET\\KhoiTaoWebserviceDKCKS\r\nDatabaseVer: 296\r\nMa_KH: 0102182528","message":"Object reference not set to an instance of an object.","innerException":"System.NullReferenceException: Object reference not set to an instance of an object.\r\n   at TSD.ECUSKDNET.frmMain.KhoiTaoWebserviceDKCKS()","stackTrace":"   at TSD.ECUSKDNET.frmMain.KhoiTaoWebserviceDKCKS()","companyCode":"0100112691","companyName":"Công ty TNHH tiếp vận toàn cầu Hải Đăng","contact":"Mr Truong","contactPhone":"02432076996","systemOS":"Microsoft Windows 10 Enterprise LTSC","computerName":"HDG-Logistics","sqlString":"SELECT Top 1 ECUSString FROM  SYSPARA WHERE Code='KiemTraUserSuDung'##Select * from ProfileValue Where Ten = 'THIET_LAP_IN_EXCEL'##Select UserID from  SYSAPPUSER where Username = 'Root'##Select leve from  SYSAPPUSER where Username = 'Root'##SELECT COUNT(*) FROM BQ_DON_HANG WHERE PC = 'HDG-LOGISTICS' AND MST_KHACH_HANG = '0100112691'##SELECT * FROM ProfileValue WHERE exists(SELECT * FROM Profile WHERE NguoiDung='Root' And ProfileValue.ProfileID = Profile.ProfileID)##SELECT Top 1 ECUSString FROM  SYSPARA WHERE Code='DateShowReIndex'##SELECT TOP 1 1 FROM SYSPARA WHERE Code = 'FiscalFromDate_0102182528'##SELECT * FROM ProfileValue WHERE exists(SELECT * FROM Profile WHERE NguoiDung='Root' And ProfileValue.ProfileID = Profile.ProfileID)##Select COUNT(1) From DToKhaiMD  Where [MA_DV]='0102182528' AND TTTK in ('D','P','T') AND ISNULL(ISTEST, 0) = 0  and isNewInfomation = 2 AND PhienBan_TK ='CT' and [NextToKhaiID] is NULL"}
+StackTrace: 
+AppVer: 6.0.154
+AppDate: 07-31-2024 04:06:01 PM
+Date/Time: 07-31-2024 04:06:01 PM
+================================================
+Title: LogErrorApi=>Send
+Message: {"loglevel":"ERROR","timelog":"2024-07-31T16:06:01.7028686+07:00","application":"ECUS5VNACCS2018","applicationVer":"6.0.154","service":"ECUS5NET","description":"ECUS5NET\\KhoiTaoWebserviceDKCKS\r\nDatabaseVer: 296\r\nMa_KH: 0102182528","message":"Object reference not set to an instance of an object.","innerException":"System.NullReferenceException: Object reference not set to an instance of an object.\r\n   at TSD.ECUSKDNET.frmMain.KhoiTaoWebserviceDKCKS()","stackTrace":"   at TSD.ECUSKDNET.frmMain.KhoiTaoWebserviceDKCKS()","companyCode":"0100112691","companyName":"Công ty TNHH tiếp vận toàn cầu Hải Đăng","contact":"Mr Truong","contactPhone":"02432076996","systemOS":"Microsoft Windows 10 Enterprise LTSC","computerName":"HDG-Logistics","sqlString":"SELECT Top 1 ECUSString FROM  SYSPARA WHERE Code='KiemTraUserSuDung'##Select * from ProfileValue Where Ten = 'THIET_LAP_IN_EXCEL'##Select UserID from  SYSAPPUSER where Username = 'Root'##Select leve from  SYSAPPUSER where Username = 'Root'##SELECT COUNT(*) FROM BQ_DON_HANG WHERE PC = 'HDG-LOGISTICS' AND MST_KHACH_HANG = '0100112691'##SELECT * FROM ProfileValue WHERE exists(SELECT * FROM Profile WHERE NguoiDung='Root' And ProfileValue.ProfileID = Profile.ProfileID)##SELECT Top 1 ECUSString FROM  SYSPARA WHERE Code='DateShowReIndex'##SELECT TOP 1 1 FROM SYSPARA WHERE Code = 'FiscalFromDate_0102182528'##SELECT * FROM ProfileValue WHERE exists(SELECT * FROM Profile WHERE NguoiDung='Root' And ProfileValue.ProfileID = Profile.ProfileID)##Select COUNT(1) From DToKhaiMD  Where [MA_DV]='0102182528' AND TTTK in ('D','P','T') AND ISNULL(ISTEST, 0) = 0  and isNewInfomation = 2 AND PhienBan_TK ='CT' and [NextToKhaiID] is NULL"}
+The underlying connection was closed: Could not establish trust relationship for the SSL/TLS secure channel.
+StackTrace:    at System.Net.HttpWebRequest.GetResponse()
+   at LogErrorApi.LogErrorApi.Send(String BodyParameters)
+AppVer: 6.0.154
+AppDate: 07-31-2024 04:06:02 PM
+Date/Time: 07-31-2024 04:06:02 PM
+================================================
+Title: checkService_OneMonth
+Message: 0.Bắt đầu kiểm tra dịch vụ
+StackTrace: 
+AppVer: 6.0.154
+AppDate: 26/06/2024
+Date/Time: 7/31/2024 4:06:04 PM
+================================================
+Title: bgwCheckUpdate
+Message: Kiểm tra update tự động.
+StackTrace: 
+AppVer: 6.0.154
+AppDate: 26/06/2024
+Date/Time: 7/31/2024 4:08:04 PM
+================================================
+Title: TSDUtil\clsMyApp\isValide_an
+Message: 
+Object reference not set to an instance of an object.
+StackTrace:    at TSD.Util.clsMyApp.(DataSet , DataSet , String , Form , String )
+AppVer: 6.0.154
+AppDate: 26/06/2024
+Date/Time: 07-31-2024 04:09:13 PM
+================================================
