@@ -1,0 +1,13 @@
+﻿{
+  "Name": "ECUS5-VNACCS 2018 (Electronic Customs Service",
+  "Type": "Screen",
+  "Id": "xGpn-qoQXEqCZb1AUZtJuw",
+  "Reference": "bSOPBbyDJUag3brxNdIvPQ/xGpn-qoQXEqCZb1AUZtJuw",
+  "ParentRef": "bSOPBbyDJUag3brxNdIvPQ/x0cl63q_NUadXaV_xFsOFQ",
+  "Created": "2024-08-15T17:52:22.5418937Z",
+  "Updated": "2024-08-15T17:52:22.5418937Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.10.2.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.10.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

@@ -12,6 +12,8 @@
       "Path": "Main.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "X9Value&Sequence_120",
+        "U9Value&Sequence_120",
         "screenshotError&Sequence_122",
         "successText&Sequence_116",
         "folder_Name&Sequence_122",

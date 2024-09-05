@@ -19235,15 +19235,15 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\HDG\\.nuget\\packages\\": {}
+    "C:\\Users\\Personal\\.nuget\\packages\\": {}
   },
   "project": {
     "restore": {
       "projectUniqueName": "Import Declaretion",
       "projectName": "Import Declaretion",
-      "projectPath": "D:\\RPA_HDL\\Import Declaration\\source\\Import Declaretion\\.local",
-      "packagesPath": "C:\\Users\\HDG\\.nuget\\packages\\",
-      "outputPath": "D:\\RPA_HDL\\Import Declaration\\source\\Import Declaretion\\.local"
+      "projectPath": "D:\\Import-Declaration\\source\\Import Declaretion\\.local",
+      "packagesPath": "C:\\Users\\Personal\\.nuget\\packages\\",
+      "outputPath": "D:\\Import-Declaration\\source\\Import Declaretion\\.local"
     },
     "frameworks": {
       "net8.0-windows7.0": {
@@ -19269,7 +19269,7 @@
             "version": "[24.10.2, 24.10.2]"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Users\\HDG\\AppData\\Local\\Programs\\UiPath\\Studio\\PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Users\\Personal\\AppData\\Local\\Programs\\UiPath\\Studio\\PortableRuntimeIdentifierGraph.json"
       }
     },
     "runtimes": {

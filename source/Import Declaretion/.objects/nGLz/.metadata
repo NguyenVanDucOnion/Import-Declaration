@@ -1,0 +1,12 @@
+﻿{
+  "Name": "ECUS5-VNACCS 2018 (Electronic Customs Service",
+  "Type": "App",
+  "Id": "nGLzsJh-tkOWVZDFbavyig",
+  "Reference": "bSOPBbyDJUag3brxNdIvPQ/nGLzsJh-tkOWVZDFbavyig",
+  "Created": "2024-08-15T17:52:22.4926662Z",
+  "Updated": "2024-08-15T17:52:22.4926662Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.10.2.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.10.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}
