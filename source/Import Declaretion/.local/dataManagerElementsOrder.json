@@ -12,6 +12,8 @@
       "Path": "Main.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "folderNotOKExists&Sequence_122",
+        "folderOkExists&Sequence_116",
         "X9Value&Sequence_120",
         "U9Value&Sequence_120",
         "screenshotError&Sequence_122",
